@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Заявки
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
@@ -16,5 +16,16 @@
   <div id="container">
     <strong>Ready to create an app?</strong>
     <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  </div> -->
+  <div style="display: flex;flex-direction: column;justify-content: space-evenly;padding-left: 20%;padding-right: 20%;height: 100%;">
+    <ion-button expand="block" fill="solid" (click)="openSelect()" style="font-size:2rem">Для квартиры</ion-button>
+    <ion-button expand="block" fill="outline" style="font-size:2rem">Для ОСИ</ion-button>
+
+    <ion-select interface="alert" style="display: none;" #mySelect>
+      
+      <ion-select-option>электрик</ion-select-option>
+      <ion-select-option>клининг</ion-select-option>
+      <ion-select-option>сантехник</ion-select-option>
+    </ion-select>
   </div>
 </ion-content>
