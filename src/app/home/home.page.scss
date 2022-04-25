@@ -1,27 +1,49 @@
-#container {
-  text-align: center;
-
+body{
+  overflow: hidden;
+}
+#slideShow{
+  height: 100%;
+}
+ion-slides{
+  --bullet-background-active:#07575B;
+  --bullet-background: #808080;
+}
+ion-slide{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30%;
+  
+  img{
+    width: 50%;
+    height: 505;
+  }
+  .title {
+    font-weight: bold;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  p {
+      font-size: 15px;
+      padding-left: 5rem;
+      padding-right: 5rem;
+  }
+}
+#next{
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 3rem;
+  right: 1rem;
+  z-index: 2;
+
+  ion-icon{
+    color:#07575B;
+    font-size: 3rem;
+  }
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+#continue{
+  position: absolute;
+  bottom: 3rem;
+  left: 1rem;
+  color: #07575b;
+  font-weight: bold;
+  z-index: 2;
 }

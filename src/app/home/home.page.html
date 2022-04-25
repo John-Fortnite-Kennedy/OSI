@@ -1,31 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Заявки
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div> -->
-  <div style="display: flex;flex-direction: column;justify-content: space-evenly;padding-left: 20%;padding-right: 20%;height: 100%;">
-    <ion-button expand="block" fill="solid" (click)="openSelect()" style="font-size:2rem">Для квартиры</ion-button>
-    <ion-button expand="block" fill="outline" style="font-size:2rem">Для ОСИ</ion-button>
-
-    <ion-select interface="alert" style="display: none;" #mySelect>
-      
-      <ion-select-option>электрик</ion-select-option>
-      <ion-select-option>клининг</ion-select-option>
-      <ion-select-option>сантехник</ion-select-option>
-    </ion-select>
+  <div id="slideShow">
+    <ion-slides pager="true" [options]="slideOpts" style="height: 100%;" #mySlider (ionSlideReachEnd)="reachedEnd()">
+      <ion-slide>
+        <img src="assets/svg/undraw_Home_settings_re_pkya.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Вся информация о вашем доме, у вас в кармане</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_Done_checking_re_6vyx.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Создавайте голосования и принимайте решения коллективно</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_Social_networking_re_i1ex.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Общайтесь с жителями своего дома в онлайн-чате</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_finance_0bdk.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Просматривайте финансовые отчеты</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_the_search_s0xf.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Размещайте ваши находки или потери в "Бюро находок"</p>
+      </ion-slide>
+    </ion-slides>
+    <span id="continue" *ngIf="show" (click)="go()">
+      Продолжить
+    </span>
+    <ion-button (click)="onClick()" id="next" fill="clear">
+      <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+    </ion-button>
   </div>
+  
 </ion-content>

@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="logoHolder">
+    <img src="assets/imgs/myHouseLogo.png">
+  </div>
+
+  <div class="textHolder">
+    <div class="text">
+      <p>На этот номер телефона будет отправлен 6-значный код подтверждения</p>
+    </div>
+    <div id="input">
+      <ion-input type="text" prefix="+7" mask=" 000 000 00 00" placeholder="Введите номер телефона"></ion-input>
+    </div>
+    
+  
+  
+  
+  
+    <div class="buttonsHolder">
+      <ion-button (click)="login()">Отправить
+        <!-- <ion-spinner spinner="crescent" color="light"></ion-spinner> -->
+      </ion-button>
+    </div>
+  
+  
+      <div class="text">
+        <p>Продолжая Вы соглашаетесь с нашим <a (click)="openTerms()">Пользовательским соглашением</a></p>
+      </div>
+  </div>
+
+ 
+
+</ion-content>

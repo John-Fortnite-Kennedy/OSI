@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonSelect } from '@ionic/angular';
+import { IonSlides} from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +8,32 @@ import { IonSelect } from '@ionic/angular';
 })
 export class HomePage {
 
+  @ViewChild('mySlider')  slides: IonSlides;
+
+  show = false;
+
   constructor() {}
 
-  @ViewChild('mySelect', { static: false }) selectRef: IonSelect;
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
 
-  openSelect() {
-    this.selectRef.open()
+  onClick(){
+    if(this.show){
+      alert("go");
+    } else {
+      this.slides.slideNext();
+    }
   }
 
+  go(){
+    alert("go");
+  }
+
+  reachedEnd() {
+    this.show = true;
+  }
+
+  
 }
