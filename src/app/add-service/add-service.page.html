@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="services"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить службу</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="formHolder">
+    <div class="inputHolder">
+      <ion-label>Название</ion-label>
+      <ion-input type="text" [(ngModel)]="title" placeholder="Название службы" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>Номер телефона</ion-label>
+      <ion-input type="tel" [(ngModel)]="phone" simpleMask="+7 (999) 999 9999" placeholder="Номер телефона службы" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>
+        <h2>WhatsApp</h2>
+      </ion-label>
+      <ion-item id="myCheckbox" lines="none">
+        <ion-label>Есть ли на этом номере WhatsApp</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="isWhatsApp"></ion-checkbox>
+      </ion-item>
+    </div>
+  
+    <ion-button expand="full" fill="solid">
+      Добавить
+    </ion-button>
+  </div>
+</ion-content>

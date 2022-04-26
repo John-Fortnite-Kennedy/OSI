@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="#"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Службы</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="noList" *ngIf="services.length == 0; else filledList"> 
+    <p>Нет служб</p>
+  </div>
+
+  <ng-template #filledList>
+    <ion-list>
+      <ion-item *ngFor="let service of services; let id = index;">
+        <div>
+          <ion-label>
+            <h2>{{ service.title }}</h2>
+            <p>{{ service.phone }}</p>
+          </ion-label>
+        </div>
+        <ion-buttons slot="end">
+          <ion-button *ngIf="service.isWhatsApp" id="whatsappBtn" shape="circle" fill="solid" (click)="openWhatsApp()">
+            <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
+          </ion-button>
+          <ion-button id="callBtn" shape="circle" fill="solid" (click)="callService()">
+            <ion-icon slot="icon-only" name="call"></ion-icon>
+          </ion-button>
+          <ion-button id="removeBtn" shape="circle" fill="solid" (click)="removeService(id)">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button id="addBtn" [routerLink]="['/add-service']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+</ion-content>

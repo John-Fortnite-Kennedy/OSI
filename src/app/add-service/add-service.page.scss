@@ -1,0 +1,58 @@
+ion-header {
+    ion-toolbar {
+      --background: #115351;
+      --color: #ffffff;
+    }
+}
+
+ion-back-button {
+    color: white;
+}
+
+.formHolder {
+  width: 100%;
+  padding: 1rem;
+}
+
+.inputHolder {
+  width: 100%;
+
+  ion-input {
+    border: 1px solid black;
+    border-radius: 0.3rem;
+    --padding-start: 0.5rem;
+    --padding-end: 0.5rem;
+    margin: 0.3rem 0 0.8rem 0;
+  }
+}
+
+ion-label {
+  color: #054d45;
+}
+
+#myCheckbox {
+  --padding-start: 0;
+  --padding-end: 0;
+  margin-bottom: 1rem;
+
+  ion-label {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+ion-checkbox {
+  --border-radius: 50%;
+  --border-color: grey;
+  --background-checked: #115351;
+  --border-color-checked: #115351;
+  --size: 1.2rem;
+
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: -0.5rem;
+}
+
+ion-button {
+  --background: #115351;
+}
