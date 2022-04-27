@@ -1,0 +1,33 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Подтверждение</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="outer">
+      <div class="textHolder">
+        <p id="codeText">Код отправлен на номер <br> <b>894 534 6789</b> </p>
+      </div>
+      <div class="inputHolder">
+        <ion-input class="ion-no-padding" [(ngModel)]="code[0]" autofocus="true" id="1" type="numeric" max="1" maxlength="1"></ion-input>
+        <ion-input class="ion-no-padding" [(ngModel)]="code[1]" id="2" type="numeric" max="1" maxlength="1"></ion-input>
+        <ion-input class="ion-no-padding" [(ngModel)]="code[2]" id="3" type="numeric" max="1" maxlength="1"></ion-input>
+        <ion-input class="ion-no-padding" [(ngModel)]="code[3]" id="4" type="numeric" max="1" maxlength="1"></ion-input>
+      </div>
+    <div class="textHolder">
+      <p>Не получили код? <br> <b>Отправить снова</b></p>
+    </div>
+    <div class="buttonHolder">
+      <button>Подтвердить</button>
+    </div>
+  </div>
+    <div class="keyBoard">
+      <div *ngFor="let item of keyboard" class="item" (click)="setVal(item)">{{item}}</div>
+      <div class="item" (click)="setVal('back')">
+        <ion-icon name='backspace-outline'></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>
