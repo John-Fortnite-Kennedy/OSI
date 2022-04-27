@@ -11,15 +11,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div id="noList" *ngIf="announcements.length == 0; else filledList"> 
     <p>Нет объявлений</p>
   </div>
 
   <ng-template #filledList>
-    <ion-list>
-      <ion-item *ngFor="let announcement of announcements; let id = index;" (click)="presentModal(announcement)">
-          <ion-label>
+    <ion-list class="ion-no-padding">
+      <ion-item  class="ion-no-padding" *ngFor="let announcement of announcements; let id = index;" (click)="presentModal(announcement)">
+          <ion-label class="ion-no-padding ion-no-margin">
             <h2>{{ announcement.title }}</h2>
             <p>{{ announcement.description }}</p>
             <p>{{ announcement.date }}</p>

@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonSlides} from '@ionic/angular';
 
 @Component({
@@ -12,7 +13,7 @@ export class HomePage {
 
   show = false;
 
-  constructor() {}
+  constructor(public router: Router) {}
 
   slideOpts = {
     initialSlide: 0,
@@ -21,14 +22,14 @@ export class HomePage {
 
   onClick(){
     if(this.show){
-      alert("go");
+      this.go();
     } else {
       this.slides.slideNext();
     }
   }
 
   go(){
-    alert("go");
+    this.router.navigateByUrl("/login", {replaceUrl: true});
   }
 
   reachedEnd() {
