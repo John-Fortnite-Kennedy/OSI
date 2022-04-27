@@ -38,6 +38,14 @@ const routes: Routes = [
     path: 'announcement',
     loadChildren: () => import('./announcement/announcement.module').then( m => m.AnnouncementPageModule)
   },
+  {
+    path: 'reports',
+    loadChildren: () => import('./reports/reports.module').then( m => m.ReportsPageModule)
+  },
+  {
+    path: 'add-report',
+    loadChildren: () => import('./add-report/add-report.module').then( m => m.AddReportPageModule)
+  },
 
 
 

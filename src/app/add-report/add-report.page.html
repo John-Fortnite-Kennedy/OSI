@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="reports"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить отчет</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="formHolder">
+    <h1>Доходы</h1>
+    <div class="inputHolder">
+      <ion-label>От собственников квартир</ion-label>
+      <ion-input type="number" [(ngModel)]="incomeOwners" placeholder="Доход от собственников квартир" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>От собственников коммерческих помещений</ion-label>
+      <ion-input type="number" [(ngModel)]="incomeCommercial" placeholder="Доход от собственников коммерческих помещений" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>Прочие</ion-label>
+      <ion-input type="number" [(ngModel)]="incomeOther" placeholder="Прочие доходы" clear-input></ion-input>
+    </div>
+
+    <h1>Расходы</h1>
+    <div class="inputHolder">
+      <ion-label>Заработная плата</ion-label>
+      <ion-input type="number" [(ngModel)]="outcomeSalary" placeholder="Расход на заработную плату" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>Приобретение материалов</ion-label>
+      <ion-input type="number" [(ngModel)]="outcomeMaterials" placeholder="Расход на приобретение материалов" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>Текущий и капитальный ремонт</ion-label>
+      <ion-input type="number" [(ngModel)]="outcomeRepair" placeholder="Расход на текущий и капитальный ремонт" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>Работы и услуги</ion-label>
+      <ion-input type="number" [(ngModel)]="outcomeServices" placeholder="Расход на работы и услуги" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>Прочие расходы</ion-label>
+      <ion-input type="number" [(ngModel)]="outcomeOther" placeholder="Прочие расходы" clear-input></ion-input>
+    </div>
+
+    <h1>Остаток средств</h1>
+    <div class="inputHolder">
+      <ion-input type="number" [(ngModel)]="balance" placeholder="Остаток средств" clear-input></ion-input>
+    </div>
+  
+    <ion-button expand="full" fill="solid">
+      Добавить
+    </ion-button>
+  </div>
+</ion-content>

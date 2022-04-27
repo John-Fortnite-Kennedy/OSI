@@ -1,0 +1,31 @@
+ion-header {
+    ion-toolbar {
+      --background: #115351;
+      --color: #ffffff;
+    }
+}
+
+ion-back-button {
+    color: white;
+}
+
+#noList {
+    p {
+        width: 100%;
+        text-align: center;
+        color: grey;
+    }
+}
+
+ion-label {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    p {
+        color: #054d45;
+    }
+}
+
+#addBtn {
+    --background: #0f544f;
+}
