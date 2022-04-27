@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { TermsPage } from '../terms/terms.page';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  phone: string;
+
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() {
   }
@@ -18,6 +22,14 @@ export class LoginPage implements OnInit {
 
   openTerms(){
     
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: TermsPage,
+      cssClass: 'my-custom-class',
+    });
+    return await modal.present();
   }
 
 }

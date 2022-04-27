@@ -8,12 +8,15 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 
+import { SimpleMaskModule } from 'ngx-ion-simple-mask'
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    SimpleMaskModule
   ],
   declarations: [LoginPage]
 })
