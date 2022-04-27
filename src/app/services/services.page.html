@@ -12,6 +12,8 @@
 </ion-header>
 
 <ion-content>
+  <ion-searchbar animated placeholder="Поиск"></ion-searchbar>
+
   <div id="noList" *ngIf="services.length == 0; else filledList"> 
     <p>Нет служб</p>
   </div>

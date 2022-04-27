@@ -1,0 +1,25 @@
+
+ion-header {
+    ion-toolbar {
+      --background: #115351;
+      --color: #ffffff;
+    }
+}
+
+ion-back-button {
+    color: white;
+}
+
+ion-button {
+    ion-icon {
+        color: white;
+    }
+}
+
+ion-content {
+    text-align: justify;
+
+    h3 {
+        text-align: left;
+    }
+}

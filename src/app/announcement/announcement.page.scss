@@ -1,4 +1,22 @@
-h2{
+
+ion-header {
+    ion-toolbar {
+      --background: #115351;
+      --color: #ffffff;
+    }
+}
+
+ion-back-button {
+    color: white;
+}
+
+ion-button {
+    ion-icon {
+        color: white;
+    }
+}
+
+h2 {
     font-weight: 600;
     color: #115351;
 }
