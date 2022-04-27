@@ -1,3 +1,25 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main">
+    <ion-menu contentId="main" type="overlay" side="start">
+      <ion-content>
+        <div class="menuContentHolder">
+          <ion-list id="inbox-list" lines="none">
+            <ion-menu-toggle auto-hide="false">
+              <ion-item (click)="openPage(0)">
+                <ion-icon slot="start" color="dark" name="settings-outline"></ion-icon>
+                <ion-label>Профиль</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+
+          <ion-item lines="none" menuClose>
+            <ion-icon slot="start" name="exit-outline" color="danger"></ion-icon>
+            <ion-label class="exitText" color="danger">Выход из аккаунта</ion-label>
+          </ion-item>
+        </div>
+
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
 </ion-app>

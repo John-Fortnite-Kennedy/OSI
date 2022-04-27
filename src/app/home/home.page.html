@@ -1,38 +1,96 @@
-<ion-content [fullscreen]="true">
-  <div id="slideShow">
-    <ion-slides pager="true" [options]="slideOpts" style="height: 100%;" #mySlider (ionSlideReachEnd)="reachedEnd()">
-      <ion-slide>
-        <img src="assets/svg/undraw_Home_settings_re_pkya.svg">
-        <h2 class="title">Ваш дом в вашем телефоне</h2>
-        <p>Вся информация о вашем доме, у вас в кармане</p>
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/svg/undraw_Done_checking_re_6vyx.svg">
-        <h2 class="title">Ваш дом в вашем телефоне</h2>
-        <p>Создавайте голосования и принимайте решения коллективно</p>
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/svg/undraw_Social_networking_re_i1ex.svg">
-        <h2 class="title">Ваш дом в вашем телефоне</h2>
-        <p>Общайтесь с жителями своего дома в онлайн-чате</p>
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/svg/undraw_finance_0bdk.svg">
-        <h2 class="title">Ваш дом в вашем телефоне</h2>
-        <p>Просматривайте финансовые отчеты</p>
-      </ion-slide>
-      <ion-slide>
-        <img src="assets/svg/undraw_the_search_s0xf.svg">
-        <h2 class="title">Ваш дом в вашем телефоне</h2>
-        <p>Размещайте ваши находки или потери в "Бюро находок"</p>
-      </ion-slide>
-    </ion-slides>
-    <span id="continue" *ngIf="show" (click)="go()">
-      Продолжить
-    </span>
-    <ion-button (click)="onClick()" id="next" fill="clear">
-      <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
-    </ion-button>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark">
+      </ion-menu-button>
+    </ion-buttons>
+    <div slot="end" class="profile">
+      <div class="left">
+        <p class="name">Temirlan Kazturganov</p>
+        <p class="role">Совет дома</p>
+      </div>
+      <div class="right">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <div class="content">
+    <div class="notification">
+      <div class="top">
+        <p class="title">Отключение воды</p>
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
+      <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+
+    <div class="services-flexs">
+      <div class="services-flexs-child">
+          <div class="top">
+            <ion-icon name="newspaper-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p text-wrap>Объявления</p>
+          </div>
+      </div>
+      <div class="services-flexs-child" >
+          <div class="top">
+            <ion-icon name="people-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p>Службы</p>
+          </div>
+      </div>
+      <div class="services-flexs-child" >
+          <div class="top">
+            <ion-icon name="document-text-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p text-wrap>Заявки</p>
+          </div>
+      </div>
+      <div class="services-flexs-child" >
+          <div class="top">
+            <ion-icon name="cellular-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p>Отчеты</p>
+          </div>
+      </div>
+      <div class="services-flexs-child" >
+          <div class="top">
+            <ion-icon name="search-circle-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p>Бюро находок</p>
+          </div>
+      </div>
+      <div class="services-flexs-child">
+          <div class="top">
+            <ion-icon name="build-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p>Ремонт</p>
+          </div>
+      </div>
+      <div class="services-flexs-child">
+          <div class="top">
+            <ion-icon name="business-outline"></ion-icon>
+          </div>
+          <div class="bottom">
+            <p text-wrap>ОСИ</p>
+          </div>
+      </div>
+      <div class="services-flexs-child">
+        <div class="top">
+          <ion-icon name="hand-right-outline"></ion-icon>
+        </div>
+        <div class="bottom">
+          <p text-wrap>Голосование</p>
+        </div>
+    </div>       
   </div>
-  
+  </div>
 </ion-content>

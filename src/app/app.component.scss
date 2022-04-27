@@ -1,0 +1,16 @@
+.exitText {
+    color: #ff4961;
+}
+
+ion-content{
+    --overflow: hidden
+}
+
+.menuContentHolder{
+    padding-top: 2rem;
+
+    ion-label{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+}
