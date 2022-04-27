@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <div id="slideShow">
+    <ion-slides pager="true" [options]="slideOpts" style="height: 100%;" #mySlider (ionSlideReachEnd)="reachedEnd()">
+      <ion-slide>
+        <img src="assets/svg/undraw_Home_settings_re_pkya.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Вся информация о вашем доме, у вас в кармане</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_Done_checking_re_6vyx.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Создавайте голосования и принимайте решения коллективно</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_Social_networking_re_i1ex.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Общайтесь с жителями своего дома в онлайн-чате</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_finance_0bdk.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Просматривайте финансовые отчеты</p>
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/svg/undraw_the_search_s0xf.svg">
+        <h2 class="title">Ваш дом в вашем телефоне</h2>
+        <p>Размещайте ваши находки или потери в "Бюро находок"</p>
+      </ion-slide>
+    </ion-slides>
+    <span id="continue" *ngIf="show" (click)="go()">
+      Продолжить
+    </span>
+    <ion-button (click)="onClick()" id="next" fill="clear">
+      <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+    </ion-button>
+  </div>
+  
+</ion-content>

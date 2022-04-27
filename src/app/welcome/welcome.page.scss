@@ -1,0 +1,49 @@
+body{
+    overflow: hidden;
+  }
+  #slideShow{
+    height: 100%;
+  }
+  ion-slides{
+    --bullet-background-active:#07575B;
+    --bullet-background: #808080;
+  }
+  ion-slide{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30%;
+    
+    img{
+      width: 50%;
+      height: 505;
+    }
+    .title {
+      font-weight: bold;
+      padding-left: 5rem;
+      padding-right: 5rem;
+    }
+    p {
+        font-size: 15px;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+  }
+  #next{
+    position: absolute;
+    bottom: 3rem;
+    right: 1rem;
+    z-index: 2;
+  
+    ion-icon{
+      color:#07575B;
+      font-size: 3rem;
+    }
+  }
+  #continue{
+    position: absolute;
+    bottom: 3rem;
+    left: 1rem;
+    color: #07575b;
+    font-weight: bold;
+    z-index: 2;
+  }
