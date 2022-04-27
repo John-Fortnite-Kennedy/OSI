@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddRepairPage implements OnInit {
 
+  title: string;
+  description: string;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  open() {
+    alert('Загрузка изображения');
   }
 
 }

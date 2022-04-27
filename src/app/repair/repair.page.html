@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>repair</ion-title>
+    <!-- <ion-button fill="clear" slot="start" (click)="dismiss()">
+			<ion-icon name="chevron-back-sharp"></ion-icon>
+		</ion-button> -->
+
+    <ion-button class="no-padding" fill="clear" slot="end" (click)="dismiss()">
+			<ion-icon name="close-sharp"></ion-icon>
+		</ion-button>
+		<ion-title>Отчет по ремонту</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding">
+  <h1>{{ title }}</h1>
+  <h2>{{ date }}</h2>
+  <p>{{ description }}</p>
 </ion-content>

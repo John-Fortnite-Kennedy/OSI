@@ -18,7 +18,7 @@
 
   <ng-template #filledList>
     <ion-list>
-      <ion-item *ngFor="let report of reports; let id = index;" button (click)="presentModal()">
+      <ion-item *ngFor="let report of reports; let id = index;" (click)="presentModal()">
         <div>
           <ion-label>
             <h2>{{ report.title }}</h2>

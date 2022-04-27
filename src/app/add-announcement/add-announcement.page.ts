@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddAnnouncementPage implements OnInit {
 
   title: string;
-  details: string;
+  description: string;
 
   constructor() { }
 

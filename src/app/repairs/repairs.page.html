@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div id="noList" *ngIf="repairs.length == 0; else filledList"> 
     <p>Нет записей</p>
   </div>
@@ -19,13 +19,13 @@
   <ng-template #filledList>
     <ion-list class="ion-no-padding">
       <ion-item  class="ion-no-padding" *ngFor="let repair of repairs; let id = index;" (click)="presentModal(repair)">
-          <ion-label class="ion-no-padding ion-no-margin">
-            <h2>{{ repair.title }}</h2>
-            <p>{{ repair.date }}</p>
-          </ion-label>
-            <ion-badge slot="end" color="danger">
-              Новое
-            </ion-badge>
+        <ion-label class="ion-no-padding ion-no-margin">
+          <h2>{{ repair.title }}</h2>
+          <p>{{ repair.date }}</p>
+        </ion-label>
+        <ion-badge slot="end" color="danger">
+          Новое
+        </ion-badge>
       </ion-item>
     </ion-list>
   </ng-template>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-repair',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepairPage implements OnInit {
 
-  constructor() { }
+  @Input() title: string;
+  @Input() description: string;
+  @Input() date: string;
 
-  ngOnInit() {
+  constructor(private modalController: ModalController) { }
+
+  ngOnInit() { }
+
+  dismiss() {
+    this.modalController.dismiss();
   }
 
 }
