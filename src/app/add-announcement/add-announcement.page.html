@@ -1,9 +1,30 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>add-announcement</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="services"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить объявление</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="formHolder">
+    <div class="inputHolder">
+      <ion-label>Название</ion-label>
+      <ion-input type="text" [(ngModel)]="title" placeholder="Название объявления" clear-input></ion-input>
+    </div>
 
+    <div class="inputHolder">
+      <ion-label>Описание</ion-label>
+      <ion-textarea type="text" [(ngModel)]="details" placeholder="Описание объявления" clear-input></ion-textarea>
+    </div>
+
+    <ion-button expand="full" fill="solid">
+      Добавить
+    </ion-button>
+  </div>
 </ion-content>
