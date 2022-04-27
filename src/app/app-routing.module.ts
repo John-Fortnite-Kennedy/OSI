@@ -54,7 +54,19 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () => import('./welcome/welcome.module').then( m => m.WelcomePageModule)
+  },  {
+    path: 'repairs',
+    loadChildren: () => import('./repairs/repairs.module').then( m => m.RepairsPageModule)
   },
+  {
+    path: 'add-repair',
+    loadChildren: () => import('./add-repair/add-repair.module').then( m => m.AddRepairPageModule)
+  },
+  {
+    path: 'repair',
+    loadChildren: () => import('./repair/repair.module').then( m => m.RepairPageModule)
+  },
+
 
 
 
