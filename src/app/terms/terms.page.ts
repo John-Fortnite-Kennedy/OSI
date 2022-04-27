@@ -10,8 +10,7 @@ export class TermsPage implements OnInit {
 
   constructor(private modalController: ModalController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   dismiss() {
     this.modalController.dismiss();

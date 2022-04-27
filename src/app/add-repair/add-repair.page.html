@@ -1,0 +1,55 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="repairs"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить отчет</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="formHolder">
+    <div class="inputHolder">
+      <ion-label>
+        <h1>Название</h1>
+        <p>Введите название отчета, для отображения в списке</p>
+      </ion-label>
+      <ion-input type="text" [(ngModel)]="title" placeholder="Название отчета" clear-input></ion-input>
+    </div>
+
+    <div class="inputHolder">
+      <ion-label>
+        <h1>Описание</h1>
+        <p>Описание ремонта, что было сделано, в какой срок и т.д.</p>
+      </ion-label>
+      <ion-textarea type="text" [(ngModel)]="description" placeholder="Описание ремонта" rows="5"></ion-textarea>
+    </div>
+
+    <div class="inputHolder">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-label>
+              <h1>Фото до</h1>
+            </ion-label>
+            <ion-img src="../../assets/imgs/addPhoto.png" (click)="open()"></ion-img>
+          </ion-col>
+          <ion-col>
+            <ion-label>
+              <h1>Фото после</h1>
+            </ion-label>
+            <ion-img src="../../assets/imgs/addPhoto.png" (click)="open()"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-button expand="full" fill="solid">
+      Отправить
+    </ion-button>
+  </div>
+</ion-content>

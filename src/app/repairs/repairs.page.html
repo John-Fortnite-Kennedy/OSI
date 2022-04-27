@@ -7,24 +7,23 @@
         icon="chevron-back-sharp">
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Отчеты</ion-title>
+    <ion-title>Кап. ремонт</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div id="noList" *ngIf="reports.length == 0; else filledList"> 
-    <p>Нет отчетов</p>
+  <div id="noList" *ngIf="repairs.length == 0; else filledList"> 
+    <p>Нет записей</p>
   </div>
-
+  
   <ng-template #filledList>
-    <ion-list>
-      <ion-item *ngFor="let report of reports; let id = index;" (click)="presentModal()">
-        <div>
-          <ion-label>
-            <h2>{{ report.title }}</h2>
-          </ion-label>
-        </div>
-        <ion-badge slot="end" color="danger" *ngIf="true">
+    <ion-list class="ion-no-padding">
+      <ion-item  class="ion-no-padding" *ngFor="let repair of repairs; let id = index;" (click)="presentModal(repair)">
+        <ion-label class="ion-no-padding ion-no-margin">
+          <h2>{{ repair.title }}</h2>
+          <p>{{ repair.date }}</p>
+        </ion-label>
+        <ion-badge slot="end" color="danger">
           Новое
         </ion-badge>
       </ion-item>
@@ -32,10 +31,9 @@
   </ng-template>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button id="addBtn" [routerLink]="['/add-report']">
+    <ion-fab-button id="addBtn" [routerLink]="['/add-repair']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-
 
 </ion-content>

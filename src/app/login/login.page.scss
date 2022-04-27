@@ -10,10 +10,12 @@
         height: 20%;
     }
 }
+
 .textHolder{
     text-align: center;
 
 }
+
 #input{
     margin-left: 10%;
     width: 80%;
@@ -37,17 +39,18 @@
     margin-top: 2rem;
 
     ion-button {
-      height: 3rem;
-      border-radius: 6px;
-      width: 80%;
-      box-shadow: none;
-      --background:#9CBCBD;
+        height: 3rem;
+        border-radius: 6px;
+        width: 80%;
+        box-shadow: none;
+        --background:#115351;
 
-      ion-spinner {
-        color: white;
-      }
+        ion-spinner {
+            color: white;
+        }
     }
-  }
-  a{
-      color:#9CBCBD;
-  }
+}
+   
+a {
+    color:#9CBCBD;
+}

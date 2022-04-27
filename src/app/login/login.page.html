@@ -11,19 +11,14 @@
       <ion-input  type="tel" [(ngModel)]="phone" simpleMask="+7 (999) 999 99 99" clear-input placeholder="Введите номер телефона"></ion-input>
     </div>
     
-  
-  
-  
-  
     <div class="buttonsHolder">
-      <ion-button (click)="login()">Отправить
+      <ion-button disabled="true" (click)="login()">Отправить
         <!-- <ion-spinner spinner="crescent" color="light"></ion-spinner> -->
       </ion-button>
     </div>
   
-  
-      <div class="text">
-        <p>Продолжая Вы соглашаетесь с нашим <a (click)="presentModal()">Пользовательским соглашением</a></p>
+    <div class="text">
+      <p>Продолжая Вы соглашаетесь с нашим <a (click)="presentModal()">Пользовательским соглашением</a></p>
       </div>
   </div>
 

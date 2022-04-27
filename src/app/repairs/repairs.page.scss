@@ -13,13 +13,8 @@ ion-content {
     --padding-top: 0;
 }
 
-ion-searchbar {
-    padding-left: 0;
-    padding-right: 0;
-}
-
 ion-item {
-    --padding-start: 0;
+    --padding-end: 0;
 }
 
 #noList {
@@ -33,9 +28,18 @@ ion-item {
 ion-label {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    
+
+    h2{
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        font-size: 1.2rem;
+    }
 
     p {
         color: #054d45;
+        margin-bottom: 0.3rem;
+        font-size: 1rem;
     }
 }
 
