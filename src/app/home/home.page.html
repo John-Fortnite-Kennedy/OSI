@@ -27,15 +27,7 @@
     </div>
 
     <div class="services-flexs">
-      <div class="services-flexs-child">
-          <div class="top">
-            <ion-icon name="newspaper-outline"></ion-icon>
-          </div>
-          <div class="bottom">
-            <p text-wrap>Объявления</p>
-          </div>
-      </div>
-      <div class="services-flexs-child" >
+      <div class="services-flexs-child" (click)="goPage('services')">
           <div class="top">
             <ion-icon name="people-outline"></ion-icon>
           </div>
@@ -43,15 +35,15 @@
             <p>Службы</p>
           </div>
       </div>
-      <div class="services-flexs-child" >
+      <div class="services-flexs-child" (click)="goPage('requests')">
           <div class="top">
             <ion-icon name="document-text-outline"></ion-icon>
           </div>
           <div class="bottom">
-            <p text-wrap>Заявки</p>
+            <p>Заявки</p>
           </div>
       </div>
-      <div class="services-flexs-child" >
+      <div class="services-flexs-child" (click)="goPage('reports')">
           <div class="top">
             <ion-icon name="cellular-outline"></ion-icon>
           </div>
@@ -59,7 +51,7 @@
             <p>Отчеты</p>
           </div>
       </div>
-      <div class="services-flexs-child" >
+      <div class="services-flexs-child" (click)="goPage('search')">
           <div class="top">
             <ion-icon name="search-circle-outline"></ion-icon>
           </div>
@@ -67,7 +59,7 @@
             <p>Бюро находок</p>
           </div>
       </div>
-      <div class="services-flexs-child">
+      <div class="services-flexs-child" (click)="goPage('repair')">
           <div class="top">
             <ion-icon name="build-outline"></ion-icon>
           </div>
@@ -75,20 +67,20 @@
             <p>Ремонт</p>
           </div>
       </div>
-      <div class="services-flexs-child">
+      <div class="services-flexs-child" (click)="goPage('osi')">
           <div class="top">
             <ion-icon name="business-outline"></ion-icon>
           </div>
           <div class="bottom">
-            <p text-wrap>ОСИ</p>
+            <p>ОСИ</p>
           </div>
       </div>
-      <div class="services-flexs-child">
+      <div class="services-flexs-child" (click)="goPage('voting')">
         <div class="top">
           <ion-icon name="hand-right-outline"></ion-icon>
         </div>
         <div class="bottom">
-          <p text-wrap>Голосование</p>
+          <p>Голосование</p>
         </div>
     </div>       
   </div>

@@ -32,6 +32,32 @@ export class HomePage {
     this.router.navigateByUrl("/login", {replaceUrl: true});
   }
 
+  goPage(data){
+    switch(data) {
+      case 'services':
+      this.router.navigateByUrl("/services");
+      break
+      case 'requests':
+      this.router.navigateByUrl("/requests");
+      break
+      case 'reports':
+      this.router.navigateByUrl("/reports");
+      break
+      case 'search':
+      this.router.navigateByUrl("/search");
+      break
+      case 'repair':
+      this.router.navigateByUrl("/repair");
+      break
+      case 'osi':
+      this.router.navigateByUrl("/osi");
+      break
+      case 'services':
+      this.router.navigateByUrl("/voting");
+      break
+    }
+  }
+
   reachedEnd() {
     this.show = true;
   }
