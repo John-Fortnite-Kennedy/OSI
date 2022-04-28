@@ -46,11 +46,11 @@ export class HomePage {
       case 'search':
       this.router.navigateByUrl("/search");
       break
-      case 'repair':
-      this.router.navigateByUrl("/repair");
+      case 'repairs':
+      this.router.navigateByUrl("/repairs");
       break
-      case 'osi':
-      this.router.navigateByUrl("/osi");
+      case 'osi-info':
+      this.router.navigateByUrl("/osi-info");
       break
       case 'services':
       this.router.navigateByUrl("/voting");
