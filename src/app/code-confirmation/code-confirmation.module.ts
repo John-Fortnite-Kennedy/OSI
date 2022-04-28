@@ -7,8 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { CodeConfirmationPageRoutingModule } from './code-confirmation-routing.module';
 
 import { CodeConfirmationPage } from './code-confirmation.page';
-import { NgOtpInputModule } from 'ng-otp-input';
-import { HideKeyboardModule } from 'hide-keyboard';
+// import { NgOtpInputModule } from 'ng-otp-input';
+// import { HideKeyboardModule } from 'hide-keyboard';
 
 @NgModule({
   imports: [
@@ -16,8 +16,8 @@ import { HideKeyboardModule } from 'hide-keyboard';
     FormsModule,
     IonicModule,
     CodeConfirmationPageRoutingModule,
-    NgOtpInputModule,
-    HideKeyboardModule
+    // NgOtpInputModule,
+    // HideKeyboardModule
   ],
   declarations: [CodeConfirmationPage]
 })

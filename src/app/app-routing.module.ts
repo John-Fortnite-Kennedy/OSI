@@ -78,7 +78,11 @@ const routes: Routes = [
   {
     path: 'code-confirmation',
     loadChildren: () => import('./code-confirmation/code-confirmation.module').then( m => m.CodeConfirmationPageModule)
+  },  {
+    path: 'chat',
+    loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
+
 
 
 

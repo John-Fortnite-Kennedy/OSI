@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark">
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Чат</ion-title>
+    <!-- <ion-icon slot="end" name="notifications"></ion-icon> -->
+    <ion-icon slot="end" name="notifications-off"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="chatHolder">
+
+    <div class="otherMsg">
+      <div class="container">
+        <p class="message">Соседи, кто шумит? Спать невозможно.</p>
+        <p class="time">23:45</p>
+        <p class="sender">Зарина, квартира 43</p>
+      </div>
+    </div>
+    <div class="myMsg">
+      <div class="container">
+        <p class="message">Да, тоже слышу шум, сделайте музыку потише, иначе вызову участкового.</p>
+        <p class="time">23:46</p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <div class="sendPanel">
+    <ion-input type="text" placeholder="Введите сообщение ..."></ion-input>
+    <ion-button slot="end">
+      <ion-icon name="send" size="large"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>
