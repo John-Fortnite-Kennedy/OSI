@@ -1,6 +1,6 @@
-
 ion-header {
     --background: #eeeeee;
+
     ion-toolbar {
         --background: #eeeeee;
 
@@ -113,6 +113,8 @@ ion-content {
         height: 2.8rem;
         margin-right: 0.4rem;
         margin-bottom: 0;
+        --padding-start: 0.5rem;
+        --padding-end: 0.5rem;
     }
 
     ion-button {
@@ -132,7 +134,7 @@ ion-content {
 }
 
 ion-footer {
-    background: #eeeeee;
+    //background: #eeeeee;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
