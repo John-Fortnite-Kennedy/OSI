@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonInput, ModalController } from '@ionic/angular';
 import { TermsPage } from '../terms/terms.page';
 
 @Component({
@@ -9,19 +9,61 @@ import { TermsPage } from '../terms/terms.page';
 })
 export class LoginPage implements OnInit {
 
-  phone: string;
+  keyboard = [1,2,3,4,5,6,7,8,9,'',0]
+  phone = ['+7', '-', '(', null, null, null, ')', '-', null, null, null, '-', null, null, '-', null, null]
+  text = "+7-(xxx)-xxx-xxxx"
+  textArr = this.text.split('')
+  counter = 3
+  @ViewChild(IonInput) input
 
-  constructor(private modalController: ModalController) { }
+  constructor(private modalController: ModalController) {
+  }
 
   ngOnInit() {
+    console.log(this.isNumber(this.textArr[4]))
   }
 
-  login(){
-
+  isNumber(char) {
+    return /^\d$/.test(char);
   }
 
-  openTerms(){
-    
+  login(){}
+
+  val(){
+    this.textArr[0] = '-'
+    this.text = this.textArr.join('')
+  }
+
+  setVal(val) {
+    this.input.setFocus()
+    while(this.textArr[this.counter] != 'x'){
+      if(this.counter<this.phone.length-1)
+      this.counter++
+    }
+    this.textArr[this.counter] = val
+    this.text = this.textArr.join('')
+    if(this.counter<this.phone.length-1)
+    this.counter++
+    console.log(this.counter)
+  }
+
+  back(){
+    this.input.setFocus()
+    while(!this.isNumber(this.textArr[this.counter])){
+      if(this.counter>3){
+        this.counter--
+      }
+    }
+    this.textArr[this.counter] = 'x'
+    this.text = this.textArr.join('')
+    if(this.counter>3){
+      this.counter--
+    }
+    console.log(this.counter)
+  }
+
+  logEvent($event){
+    console.log($event)
   }
 
   async presentModal() {

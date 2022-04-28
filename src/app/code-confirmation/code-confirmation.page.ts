@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { IonInput } from '@ionic/angular';
 // import { NgOtpInputComponent } from 'ng-otp-input';
 
 @Component({
@@ -9,18 +9,28 @@ import { Platform } from '@ionic/angular';
 })
 export class CodeConfirmationPage implements OnInit {
 
-  keyboard = [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0]
-  // @ViewChild(NgOtpInputComponent) inputCode
-  inputCode;
-  code = [0, 0, 0, 0]
-  current = this.code[0]
+  keyboard = [1, 2, 3, 4, 5, 6, 7, 8, 9, null, 0]
+  code = [null, null, null, null]
+  current = 0
 
-  constructor(public platform: Platform) {
-  }
+  constructor() {}
 
   ngOnInit() {
   }
 
   setVal(val) {
+    if(val!=null){
+      this.code[this.current] = val
+      if(this.current<3){
+        this.current++
+      }
+    }
+  }
+
+  back(){
+    this.code[this.current] = null
+    if(this.current>0){
+      this.current--
+    }
   }
 }

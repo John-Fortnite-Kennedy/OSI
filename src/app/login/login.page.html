@@ -1,25 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Введите номер телефона</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <div class="logoHolder">
-    <img src="assets/imgs/myHouseLogo.png">
-  </div>
-
-  <div class="textHolder">
-    <div class="text">
-      <p>На этот номер телефона будет отправлен 6-значный код подтверждения</p>
+  <div class="content">
+    <div class="outer">
+    <div class="imageHolder">
+      <img src="https://cdn-icons-png.flaticon.com/512/2971/2971416.png">     
     </div>
-    <div id="input">
-      <ion-input  type="tel" [(ngModel)]="phone" simpleMask="+7 (999) 999 99 99" clear-input placeholder="Введите номер телефона"></ion-input>
+    <div class="textHolder">
+      <p>На который будет отправлен 4-значный код</p>
     </div>
-    
-    <div class="buttonsHolder">
-      <ion-button disabled="true" (click)="login()">Отправить
-        <!-- <ion-spinner spinner="crescent" color="light"></ion-spinner> -->
-      </ion-button>
-    </div>
-  
-    <div class="text">
-      <p>Продолжая Вы соглашаетесь с нашим <a (click)="presentModal()">Пользовательским соглашением</a></p>
+    <div class="inputHolder">
+      <div class="left">
+        <ion-label>Номер телефона</ion-label>
+        <ion-input readonly="true" autofocus="true" [(ngModel)]="text"></ion-input>
       </div>
+      <button>Продолжить</button>
+    </div>
   </div>
-
+    <div class="keyBoard">
+      <div *ngFor="let item of keyboard" class="item" (click)="setVal(item)">{{item}}</div>
+      <div class="item" (click)="back()">
+        <ion-icon name='backspace-outline'></ion-icon>
+      </div>
+    </div>
+  </div>
 </ion-content>
