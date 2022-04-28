@@ -33,29 +33,31 @@ export class HomePage {
   }
 
   goPage(data){
-    switch(data) {
-      case 'services':
-      this.router.navigateByUrl("/services");
-      break
-      case 'requests':
-      this.router.navigateByUrl("/requests");
-      break
-      case 'reports':
-      this.router.navigateByUrl("/reports");
-      break
-      case 'search':
-      this.router.navigateByUrl("/search");
-      break
-      case 'repairs':
-      this.router.navigateByUrl("/repairs");
-      break
-      case 'osi-info':
-      this.router.navigateByUrl("/osi-info");
-      break
-      case 'services':
-      this.router.navigateByUrl("/voting");
-      break
-    }
+    this.router.navigateByUrl("/" + data);
+
+    // switch(data) {
+    //   case 'services':
+    //   this.router.navigateByUrl("/services");
+    //   break
+    //   case 'requests':
+    //   this.router.navigateByUrl("/requests");
+    //   break
+    //   case 'reports':
+    //   this.router.navigateByUrl("/reports");
+    //   break
+    //   case 'search':
+    //   this.router.navigateByUrl("/search");
+    //   break
+    //   case 'repairs':
+    //   this.router.navigateByUrl("/repairs");
+    //   break
+    //   case 'osi-info':
+    //   this.router.navigateByUrl("/osi-info");
+    //   break
+    //   case 'services':
+    //   this.router.navigateByUrl("/voting");
+    //   break
+    // }
   }
 
   reachedEnd() {
