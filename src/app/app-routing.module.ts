@@ -82,6 +82,10 @@ const routes: Routes = [
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
+  {
+    path: 'osi-info',
+    loadChildren: () => import('./osi-info/osi-info.module').then( m => m.OsiInfoPageModule)
+  },
 
 
 

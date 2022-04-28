@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="home"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>ОСИ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen="true">
+  <div class="contentHolder">
+    <h5>Адрес ОСИ</h5>
+    <p class="address">г. Нур-Султан ул. Бокейхана 2</p>
+
+    <h5>Председатель</h5>
+    <ion-item lines="none">
+      <ion-label>
+        <p class="fname">Казтурганов Темирлан</p>
+        <p class="phone">+7 701 939 00 99</p>
+      </ion-label>
+      <ion-icon slot="end" name="call"></ion-icon>
+    </ion-item>
+
+    <h5>Совет дома</h5>
+    <ion-list>
+      <ion-item lines="none" *ngFor="let member of houseCouncil">
+        <ion-label>
+          <p class="fname">{{ member.fname }}</p>
+          <p class="phone">{{ member.phone }}</p>
+        </ion-label>
+        <ion-icon slot="end" name="call"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
