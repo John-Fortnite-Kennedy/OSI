@@ -1,35 +1,38 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="#"
-        text=""
-        icon="chevron-back-sharp">
-      </ion-back-button>
-    </ion-buttons>
-    <ion-title>Отчеты</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content  class="ion-padding">
 
-<ion-content class="ion-padding">
+
+    <ion-back-button
+        defaultHref="#"
+        text="&nbsp;Отчеты"
+        icon="chevron-back-sharp"
+        class="tmp"
+        >
+    </ion-back-button>
+  
+
   <div id="noList" *ngIf="reports.length == 0; else filledList"> 
     <p>Нет отчетов</p>
   </div>
 
+  
+
   <ng-template #filledList>
-    <ion-list>
-      <ion-item *ngFor="let report of reports; let id = index;" (click)="presentModal()">
-        <div>
-          <ion-label>
-            <h2>{{ report.title }}</h2>
-          </ion-label>
-        </div>
-        <ion-badge slot="end" color="danger" *ngIf="true">
-          Новое
-        </ion-badge>
-      </ion-item>
-    </ion-list>
+      <ion-card *ngFor="let report of reports; let id = index;" (click)="presentModal()">
+        <ion-card-header>
+          <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+          <ion-card-title>{{ report.title }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          02 февраля 2022
+          <!-- <ion-badge slot="end" color="danger" *ngIf="true">
+            Новое
+          </ion-badge> -->
+        </ion-card-content>
+      </ion-card>
   </ng-template>
+
+  
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button id="addBtn" [routerLink]="['/add-report']">

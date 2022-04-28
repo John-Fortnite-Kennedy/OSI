@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ReportPage } from '../report/report.page';
 
+
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.page.html',
@@ -26,7 +27,11 @@ export class ReportsPage implements OnInit {
     return await modal.present();
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+
+  }
+
+
 
   showReport() {
     //this.router.navigate(['/report'])

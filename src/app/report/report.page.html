@@ -11,6 +11,27 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <h2>Отчет по 13.03.2021</h2>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col>Наименование</ion-col>
+      <ion-col>Сумма</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="font-weight: bold;">Доходы</ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>От собственников квартир</ion-col>
+      <ion-col>1 778</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>От собственников коммерческих помещений</ion-col>
+      <ion-col>244</ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="chartHolder"> 
+    <canvas id="pieChart"></canvas> 
+  </div>
 </ion-content>

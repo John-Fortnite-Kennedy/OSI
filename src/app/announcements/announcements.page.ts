@@ -38,7 +38,9 @@ export class AnnouncementsPage implements OnInit {
         'title': tmp.title,
         'description':  tmp.description,
         'date':  tmp.date
-      }
+      },
+      initialBreakpoint: 0.95,
+    breakpoints: [0, 0.95, 1] 
     });
     return await modal.present();
   }

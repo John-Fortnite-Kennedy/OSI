@@ -14,3 +14,33 @@ ion-button {
       color: white;
   }
 }
+
+.chartHolder{
+  padding-top: 1rem;
+}
+
+ion-grid {
+  //--ion-grid-column-padding: 1rem;
+  border-collapse: collapse;
+  border-style: hidden;
+  
+  ion-row:first-child {
+    
+    font-weight: bold;
+    text-align: center;
+  }
+  ion-col {
+    border: 1px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    padding: 1rem;
+  }
+  ion-col:last-child {
+    border-right: 1px solid black;
+    text-align: end;
+  }
+  
+  ion-row:last-child {
+    border-bottom: 1px solid black;
+  }
+}

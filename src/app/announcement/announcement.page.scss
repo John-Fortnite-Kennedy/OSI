@@ -6,6 +6,13 @@ ion-header {
     }
 }
 
+ion-content{
+    --padding-end: 1.5rem;
+    --padding-start: 1.5rem;
+
+
+}
+
 ion-back-button {
     color: white;
 }
@@ -16,7 +23,18 @@ ion-button {
     }
 }
 
-h2 {
+h1 {
     font-weight: 600;
-    color: #115351;
+    margin-bottom: 1rem;
+}
+
+ion-img::part(image) {
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba($color: #000000, $alpha: 0.2);
+}
+
+h2 {
+    font-size: 1rem;
+    color: #838383;
+    margin-top: 1.5rem;
 }

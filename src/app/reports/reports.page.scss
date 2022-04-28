@@ -1,16 +1,43 @@
-ion-header {
-    ion-toolbar {
-      --background: #115351;
-      --color: #ffffff;
+ion-back-button{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    
+    width: fit-content;
+    margin-left: 1rem;
+
+    
+}
+
+ion-card{
+    --background: white;
+    margin: 1rem;
+
+    ion-card-header{
+        padding-top: 0.7rem;
+    }
+
+    ion-card-title{
+        font-size: 1.1rem;
+        
+    }
+
+    ion-card-content{
+        padding-bottom: 0.7rem;
+        font-size: 0.9rem;
     }
 }
 
-ion-back-button {
-    color: white;
+
+ion-content{
+    --ion-background-color:#EEEEEE;
 }
 
 ion-content {
     --padding-top: 0;
+    
 }
 
 ion-item {
