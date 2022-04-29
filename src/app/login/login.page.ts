@@ -9,9 +9,8 @@ import { TermsPage } from '../terms/terms.page';
 })
 export class LoginPage implements OnInit {
 
-  keyboard = [1,2,3,4,5,6,7,8,9,'',0]
-  phone = ['+7', '-', '(', null, null, null, ')', '-', null, null, null, '-', null, null, '-', null, null]
-  text = "+7-(xxx)-xxx-xxxx"
+  keyboard = [1,2,3,4,5,6,7,8,9,null,0]
+  text = "+7 (xxx) xxx xxxx"
   textArr = this.text.split('')
   counter = 3
   @ViewChild(IonInput) input
@@ -20,7 +19,7 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.isNumber(this.textArr[4]))
+    console.log(this.textArr.length)
   }
 
   isNumber(char) {
@@ -36,15 +35,21 @@ export class LoginPage implements OnInit {
 
   setVal(val) {
     this.input.setFocus()
-    while(this.textArr[this.counter] != 'x'){
-      if(this.counter<this.phone.length-1)
-      this.counter++
+    if(val!=null){
+      while(this.textArr[this.counter] != 'x'){
+        if(this.counter<this.textArr.length-1){
+          this.counter++
+        }
+        else{
+          return
+        }
+      }
+      this.textArr[this.counter] = val
+      this.text = this.textArr.join('')
+      if(this.counter<this.textArr.length-1){
+        this.counter++
+      }
     }
-    this.textArr[this.counter] = val
-    this.text = this.textArr.join('')
-    if(this.counter<this.phone.length-1)
-    this.counter++
-    console.log(this.counter)
   }
 
   back(){
@@ -52,6 +57,9 @@ export class LoginPage implements OnInit {
     while(!this.isNumber(this.textArr[this.counter])){
       if(this.counter>3){
         this.counter--
+      }
+      else{
+        return
       }
     }
     this.textArr[this.counter] = 'x'
