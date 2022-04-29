@@ -1,7 +1,8 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-menu-button color="dark">
+      <ion-menu-button>
+        <ion-icon src="../../assets/svg/custom-icons/burger-menu.svg"></ion-icon>
       </ion-menu-button>
     </ion-buttons>
     <div slot="end" class="profile">
@@ -10,7 +11,7 @@
         <p class="role">Совет дома</p>
       </div>
       <div class="right">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png">
+        <ion-img src="../../assets/svg/custom-icons/avatar.svg"></ion-img>
       </div>
     </div>
   </ion-toolbar>
@@ -29,7 +30,7 @@
     <div class="services-flexs">
       <div class="services-flexs-child" (click)="goPage('services')">
           <div class="top">
-            <ion-icon name="people-outline"></ion-icon>
+            <ion-icon src="../../assets/svg/custom-icons/services.svg"></ion-icon>
           </div>
           <div class="bottom">
             <p>Службы</p>
@@ -37,7 +38,7 @@
       </div>
       <div class="services-flexs-child" (click)="goPage('requests')">
           <div class="top">
-            <ion-icon name="document-text-outline"></ion-icon>
+            <ion-icon src="../../assets/svg/custom-icons/requests.svg"></ion-icon>
           </div>
           <div class="bottom">
             <p>Заявки</p>
@@ -45,7 +46,7 @@
       </div>
       <div class="services-flexs-child" (click)="goPage('reports')">
           <div class="top">
-            <ion-icon name="cellular-outline"></ion-icon>
+            <ion-icon src="../../assets/svg/custom-icons/reports.svg"></ion-icon>
           </div>
           <div class="bottom">
             <p>Отчеты</p>
@@ -53,7 +54,7 @@
       </div>
       <div class="services-flexs-child" (click)="goPage('search')">
           <div class="top">
-            <ion-icon name="search-circle-outline"></ion-icon>
+            <ion-icon src="../../assets/svg/custom-icons/search.svg"></ion-icon>
           </div>
           <div class="bottom">
             <p>Бюро находок</p>
@@ -61,28 +62,20 @@
       </div>
       <div class="services-flexs-child" (click)="goPage('repairs')">
           <div class="top">
-            <ion-icon name="build-outline"></ion-icon>
+            <ion-icon src="../../assets/svg/custom-icons/repair.svg"></ion-icon>
           </div>
           <div class="bottom">
             <p>Ремонт</p>
           </div>
       </div>
-      <div class="services-flexs-child" (click)="goPage('osi-info')">
-          <div class="top">
-            <ion-icon name="business-outline"></ion-icon>
-          </div>
-          <div class="bottom">
-            <p>ОСИ</p>
-          </div>
-      </div>
-      <!-- <div class="services-flexs-child" (click)="goPage('voting')">
+      <div class="services-flexs-child" (click)="goPage('voting')">
         <div class="top">
-          <ion-icon name="hand-right-outline"></ion-icon>
+          <ion-icon src="../../assets/svg/custom-icons/vote.svg"></ion-icon>
         </div>
         <div class="bottom">
           <p>Голосование</p>
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </ion-content>

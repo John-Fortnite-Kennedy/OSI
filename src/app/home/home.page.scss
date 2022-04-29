@@ -6,7 +6,7 @@ ion-header{
     --background: #eeeeee;
 
     ion-menu-button{
-      font-size: 3rem;
+      font-size: 2rem;
     }
   }
 }
@@ -45,7 +45,6 @@ ion-header{
     align-items: center;
     object-fit: cover;
     border-radius: 0.5rem;
-    border: 1px solid black;
 
     img{
       width: 100%;
@@ -130,6 +129,7 @@ ion-content{
   ion-icon{
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
+    color: black;
   }
 
   p{
