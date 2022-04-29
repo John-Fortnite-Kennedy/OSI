@@ -1,14 +1,17 @@
 <ion-content  class="ion-padding">
 
 
+  <ion-toolbar>
     <ion-back-button
-        defaultHref="#"
-        text="&nbsp;Отчеты"
+        defaultHref="tabs/home"
+        text=""
         icon="chevron-back-sharp"
         class="tmp"
+        slot="start"
         >
     </ion-back-button>
-  
+    <ion-title style="padding-left: 0; padding-right: 0;">Отчеты</ion-title>
+  </ion-toolbar>
 
   <div id="noList" *ngIf="reports.length == 0; else filledList"> 
     <p>Нет отчетов</p>

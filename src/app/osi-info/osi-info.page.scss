@@ -63,20 +63,37 @@ ion-content {
         .fname {
             color: black;
             font-size: 0.9rem;
-            padding-bottom: 0.2rem;
+            padding-bottom: 0.4rem;
         }
     
         .phone {
             color: grey;
             font-size: 0.7rem;
         }
-    }
 
-    ion-icon {
-        color: #ffffff;
-        background: #3f9e88;
-        padding: 0.4rem;
-        border-radius: 0.5rem;
-        box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
+        ion-button {
+            width: 2.5rem;
+            height: 2.5rem;
+            --padding-start: 0.4rem;
+            --padding-end: 0.4rem;
+            --padding-top: 0.4rem;
+            --padding-bottom: 0.4rem;
+            --background: #3f9e88;
+            border-radius: 0.5rem;
+            box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
+    
+            ion-icon {
+                color: white;
+                font-size: 2rem;
+            }
+        }
+
+        // ion-icon {
+        //     color: #ffffff;
+        //     background: #3f9e88;
+        //     padding: 0.4rem;
+        //     border-radius: 0.5rem;
+        //     box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
+        // }
     }
 }

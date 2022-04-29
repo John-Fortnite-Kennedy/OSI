@@ -1,28 +1,25 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <!-- <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="#"
-        text=""
-        icon="chevron-back-sharp">
-      </ion-back-button>
-    </ion-buttons> -->
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark">
+      </ion-menu-button>
+    </ion-buttons>
     <ion-title>Объявления</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content fullscreen="true">
   <div id="noList" *ngIf="announcements.length == 0; else filledList"> 
     <p>Нет объявлений</p>
   </div>
 
-  <ng-template #filledList>
+  <ng-template style="padding: 1rem;" #filledList>
     <ion-list class="ion-no-padding">
-      <ion-item  class="ion-no-padding" *ngFor="let announcement of announcements; let id = index;" (click)="presentModal(announcement)">
+      <ion-item lines="none" *ngFor="let announcement of announcements; let id = index;" (click)="presentModal(announcement)">
           <ion-label class="ion-no-padding ion-no-margin">
             <h2>{{ announcement.title }}</h2>
-            <p>{{ announcement.description }}</p>
-            <p>{{ announcement.date }}</p>
+            <p class="text">{{ announcement.description }}</p>
+            <p class="date">{{ announcement.date }}</p>
           </ion-label>
             <ion-badge slot="end" color="danger">
               Новое

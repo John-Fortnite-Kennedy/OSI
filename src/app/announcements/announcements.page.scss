@@ -1,16 +1,30 @@
 ion-header {
-    // ion-toolbar {
-    //   --background: #115351;
-    //   --color: #ffffff;
-    // }
-}
+    --background: #eeeeee;
 
-ion-back-button {
-    color: white;
+    ion-toolbar {
+        --background: #eeeeee;
+
+        ion-menu-button{
+            font-size: 3rem;
+        }
+
+        ion-title {
+            font-weight: 600;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        ion-icon {
+            font-size: 1.7rem;
+            margin: 0.5rem 1rem 0.5rem 0.5rem;
+            // color: #ba3bbe;
+            
+        }
+    }
 }
 
 ion-content {
-    --padding-top: 0;
+    --background: #eeeeee;
 }
 
 #noList {
@@ -21,48 +35,52 @@ ion-content {
     }
 }
 
-ion-label {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+ion-list {
+    background: transparent;
+    // padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
+
+    ion-item {
+        border-radius: 0.6rem;
+        --padding-top: 0.6rem;
+        --padding-start: 0.6rem;
+        --padding-end: 0.6rem;
+        --padding-bottom: 0.6rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
     
-
-    h2{
-        font-weight: 600;
-        margin-bottom: 0.3rem;
-        font-size: 1.2rem;
+        ion-label {    
+            h2{
+                font-weight: 600;
+                font-size: 1.05rem;
+                padding-bottom: 0.5rem;
+                margin: 0;
+            }
+        
+            .text {
+                font-size: 0.75rem;
+                color: #393939;
+                font-weight: 600;
+                padding-bottom: 0.5rem;
+                margin: 0;
+            }
+        
+            .date {
+                font-size: 0.75rem;
+                color: darkgrey;
+                margin: 0;
+            }
+        }
     }
-
-    p {
-        color: #054d45;
-        margin-bottom: 0.3rem;
-        font-size: 1rem;
-    }
 }
 
-ion-button[shape=circle] {
-    --border-radius: 50%;
-    width: 2.3rem;
-    height: 2.3rem;
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-}
-
-#whatsappBtn {
-    --background: rgb(41, 160, 41); //#2ea929;
-}
-
-#callBtn {
-    --background: #0f544f;
-    --padding-start: 0.6rem; 
-    --padding-end: 0.6rem;
-    --padding-top: 0.6rem;
-    --padding-bottom: 0.6rem;
-}
-
-#removeBtn {
-    --background: #e42236;
+ion-badge {
+    padding: 0.25rem 0.4rem 0.25rem 0.4rem;
+    border-radius: 0.45rem;
+    font-size: 0.7rem;
+    margin: 0;
 }
 
 #addBtn {
-    --background: #0f544f;
+    --background: linear-gradient(135deg, #ba3bbe, #6f34cc);
 }

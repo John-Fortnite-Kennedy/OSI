@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-        defaultHref="home"
+        defaultHref="tabs/home"
         text=""
         icon="chevron-back-sharp">
       </ion-back-button>
@@ -22,7 +22,10 @@
         <p class="fname">Казтурганов Темирлан</p>
         <p class="phone">+7 701 939 00 99</p>
       </ion-label>
-      <ion-icon slot="end" name="call"></ion-icon>
+      <!-- <ion-icon slot="end" name="call"></ion-icon> -->
+      <ion-button slots="end">
+        <ion-icon name="call"></ion-icon>
+      </ion-button>
     </ion-item>
 
     <h5>Совет дома</h5>
@@ -32,7 +35,10 @@
           <p class="fname">{{ member.fname }}</p>
           <p class="phone">{{ member.phone }}</p>
         </ion-label>
-        <ion-icon slot="end" name="call"></ion-icon>
+        <!-- <ion-icon slot="end" name="call"></ion-icon> -->
+        <ion-button slots="end">
+          <ion-icon name="call"></ion-icon>
+        </ion-button>
       </ion-item>
     </ion-list>
   </div>
