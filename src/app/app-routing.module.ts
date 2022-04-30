@@ -86,6 +86,10 @@ const routes: Routes = [
     path: 'osi-info',
     loadChildren: () => import('./osi-info/osi-info.module').then( m => m.OsiInfoPageModule)
   },
+  {
+    path: 'votes',
+    loadChildren: () => import('./votes/votes.module').then( m => m.VotesPageModule)
+  },
 
 
 
