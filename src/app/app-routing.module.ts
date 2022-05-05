@@ -90,6 +90,10 @@ const routes: Routes = [
     path: 'votes',
     loadChildren: () => import('./votes/votes.module').then( m => m.VotesPageModule)
   },
+  {
+    path: 'finish-registration',
+    loadChildren: () => import('./finish-registration/finish-registration.module').then( m => m.FinishRegistrationPageModule)
+  },
 
 
 

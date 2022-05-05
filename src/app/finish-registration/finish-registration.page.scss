@@ -1,0 +1,74 @@
+ion-header {
+    --background: #eeeeee;
+
+
+    ion-toolbar {
+        --background: #eeeeee;
+
+        ion-title {
+            font-weight: 600;
+            font-size: 1.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        ion-icon {
+            font-size: 1.7rem;
+            margin: 0.5rem 1rem 0.5rem 0.5rem;
+            // color: #ba3bbe;
+            
+        }
+    }
+}
+
+ion-content {
+    --background: #eeeeee;
+}
+
+ion-list {
+    background: transparent;
+    // padding: 0 1rem 1rem 1rem;
+    padding: 1rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    ion-item {
+        border-radius: 0.6rem;
+        --padding-top: 0.6rem;
+        --padding-start: 0.6rem;
+        --padding-end: 0.6rem;
+        --padding-bottom: 0.6rem;
+        margin-bottom: 0.8rem;
+        box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
+    
+        ion-label {    
+            font-weight: 600;
+        }
+    }
+}
+
+.buttonHolder{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    button{
+        width: 100%;
+        background: linear-gradient(135deg, #ba3bbe, #6f34cc);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 550;
+    }
+
+    button:disabled{
+        background: linear-gradient(135deg, #b08eb1, #b2a5c9);
+    }
+}

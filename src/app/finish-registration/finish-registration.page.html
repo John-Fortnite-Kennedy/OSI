@@ -1,0 +1,21 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- <ion-title>Завершите регистрацию</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+    <ion-list class="ion-no-padding">
+      <ion-item class="ion-no-padding">
+        <ion-label>Имя:</ion-label>
+        <ion-input (ionChange)="check()" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-label>Фамилия:</ion-label>
+        <ion-input (ionChange)="check()" [(ngModel)]="surname"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="buttonHolder">
+      <button [disabled]="!decent" (click)="confirm()" size="large">Подтвердить</button>
+    </div>
+</ion-content>

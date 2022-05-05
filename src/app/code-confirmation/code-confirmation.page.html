@@ -8,7 +8,7 @@
   <div class="content">
     <div class="outer">
       <div class="textHolder">
-        <p id="codeText">Код отправлен на номер <br> <b>894 534 6789</b> </p>
+        <p id="codeText">Код отправлен на номер <br> <b>{{phone}}</b> </p>
       </div>
       <div class="inputHolder">
         <ion-input readonly="true" class="ion-no-padding" [(ngModel)]="code[0]" #0 type="numeric" max="1" maxlength="1"></ion-input>
@@ -20,7 +20,7 @@
       <p>Не получили код? <br> <b>Отправить снова</b></p>
     </div>
     <div class="buttonHolder">
-      <button>Подтвердить</button>
+      <button [disabled]="!decent" (click)="submit()">Подтвердить</button>
     </div>
   </div>
     <div class="keyBoard">

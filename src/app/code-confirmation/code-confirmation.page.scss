@@ -89,6 +89,10 @@ ion-content{
         font-size: 1rem;
         font-weight: 550;
     }
+
+    button:disabled{
+        background: linear-gradient(135deg, #b08eb1, #b2a5c9);
+    }
 }
 
 .keyBoard{
