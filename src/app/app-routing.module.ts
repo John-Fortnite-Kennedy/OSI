@@ -98,6 +98,10 @@ const routes: Routes = [
     path: 'createorjoin',
     loadChildren: () => import('./createorjoin/createorjoin.module').then( m => m.CreateorjoinPageModule)
   },
+  {
+    path: 'apartmentdetails',
+    loadChildren: () => import('./apartmentdetails/apartmentdetails.module').then( m => m.ApartmentdetailsPageModule)
+  },
 
 
 
