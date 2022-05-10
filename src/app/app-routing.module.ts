@@ -78,7 +78,8 @@ const routes: Routes = [
   {
     path: 'code-confirmation',
     loadChildren: () => import('./code-confirmation/code-confirmation.module').then( m => m.CodeConfirmationPageModule)
-  },  {
+  },
+  {
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
@@ -102,6 +103,10 @@ const routes: Routes = [
     path: 'apartmentdetails',
     loadChildren: () => import('./apartmentdetails/apartmentdetails.module').then( m => m.ApartmentdetailsPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  }
 
 
 
