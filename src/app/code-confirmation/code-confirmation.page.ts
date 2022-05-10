@@ -17,11 +17,13 @@ export class CodeConfirmationPage implements OnInit {
   decent = false;
   verify;
   phone;
+  userdata;
+  timer = true;
 
   constructor(public router: Router, public api: ApiCallerService) {
     this.verify  =  sessionStorage.getItem('code');
     this.phone  =  sessionStorage.getItem('phone');
-    console.log(this.verify);
+    this.api.myjwt =  sessionStorage.getItem('token');
   }
 
   ngOnInit() {
@@ -32,6 +34,10 @@ export class CodeConfirmationPage implements OnInit {
     if(this.code.toString().replace(/\,/g, '') == this.verify){
       //console.log("true");
       //this.router.navigateByUrl('/tabs/home');
+
+      
+
+
       var data = {
         "phone": this.phone,
         "lastCode": this.verify
@@ -42,14 +48,78 @@ export class CodeConfirmationPage implements OnInit {
         //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
         console.log(data['payload']);
         sessionStorage.setItem('token', data['payload']);
-        this.router.navigateByUrl('/finish-registration');
+
+          var response = this.api.sendGetRequestWithAuth("/auth/userdata")
+          response.subscribe(data => {
+            //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
+            console.log("this");
+            console.log(data['payload']);
+            this.userdata = data['payload'];
+            
+            //sessionStorage.setItem('token', data['payload']);
+
+            if (this.userdata.user.name == "" && this.userdata.user.name == null && this.userdata.user.surname == "" && this.userdata.user.surname == null){
+              this.router.navigateByUrl('/finish-registration');
+            } else if (this.userdata.houses == null){
+              this.router.navigateByUrl('/finish-registration');
+              console.log("нет домов");
+              //this.router.navigateByUrl('/tabs/home');
+            } else {
+              this.router.navigateByUrl('/tabs/home');
+            }
+            
+          }, error => {
+            // Add if login and password is incorrect.
+            this.api.errorHandler(error.status);
+          })
+
+        //this.router.navigateByUrl('/finish-registration');
       }, error => {
         // Add if login and password is incorrect.
         this.api.errorHandler(error.status);
       })
+
     } else {
       alert("not true");
     }
+
+    
+    //console.log(data)
+    
+
+
+  
+
+
+  }
+
+  again(){
+    console.log("again");
+
+    this.timer=true;
+    
+    var data = {
+      "phone": this.phone,
+    }
+    //console.log(data)
+    var response = this.api.sendPostRequest(data, "/common/login")
+    response.subscribe(data => {
+      //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
+      
+      sessionStorage.setItem('code',data['payload']);
+      this.verify  =  sessionStorage.getItem('code');
+      console.log(data['payload'] + " again");
+      //this.router.navigateByUrl('/code-confirmation');
+    }, error => {
+      // Add if login and password is incorrect.
+      this.api.errorHandler(error.status);
+    })
+
+    setTimeout(() => 
+    {
+        this.timer=false;
+    },
+    120000);
   }
 
   setVal(val) {

@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <div class="content">
     <div class="outer">
       <div class="textHolder">
@@ -17,7 +17,7 @@
         <ion-input readonly="true" class="ion-no-padding" [(ngModel)]="code[3]" #3 type="numeric" max="1" maxlength="1"></ion-input>
       </div>
     <div class="textHolder">
-      <p>Не получили код? <br> <b>Отправить снова</b></p>
+      <p>Не получили код? <br> <button style="background-color: transparent;font-size: 1rem;font-weight: 600;" [disabled]="!timer" (click)="again()">Отправить снова</button></p>
     </div>
     <div class="buttonHolder">
       <button [disabled]="!decent" (click)="submit()">Подтвердить</button>
