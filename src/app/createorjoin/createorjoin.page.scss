@@ -1,0 +1,89 @@
+ion-header {
+    display: none;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .text{
+        
+
+        h5{
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    .buttonHolder{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+
+        ion-button{
+            width: 45%;
+            font-size: 0.85rem;
+            text-transform: none;
+        }
+        
+        
+
+        #join{
+            //--background: url("/assets/imgs/join.png");
+            // background-image: url("/assets/imgs/join.png");
+            // height: 47.5%;
+            // font-weight: 600;
+            // font-size: 2.5rem;
+            // --background-activated-opacity: 0.5;
+            // --background-activated: purple;
+            // border-radius: 2rem;
+
+            --background: linear-gradient(135deg, #ba3bbe, #6f34cc);
+            
+            
+        }
+
+        #create{
+            //--background: url("/assets/imgs/create.png");
+            // background-image: url("/assets/imgs/create.png");
+            // height: 47.5%;
+            // font-weight: 600;
+            // font-size: 3rem;
+            // color: lightblue;
+            // border-radius: 2rem;
+
+            --background: linear-gradient(135deg, #348CBE, #34CBC2);
+        }
+    }
+
+    .block{
+        height: 47.5%;
+        width: 95%;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+        border-radius: 1rem;
+
+      
+    }
+
+    // #join:hover {
+    //     background-image: url("/assets/imgs/join-hover.png");
+    // }
+
+    // #join{
+    //     background-image: url("/assets/imgs/join.png");
+    // }
+
+    // #create{
+    //     background-image: url("/assets/imgs/create.png");
+    // }
+}

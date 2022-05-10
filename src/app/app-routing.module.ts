@@ -78,7 +78,8 @@ const routes: Routes = [
   {
     path: 'code-confirmation',
     loadChildren: () => import('./code-confirmation/code-confirmation.module').then( m => m.CodeConfirmationPageModule)
-  },  {
+  },
+  {
     path: 'chat',
     loadChildren: () => import('./chat/chat.module').then( m => m.ChatPageModule)
   },
@@ -95,9 +96,13 @@ const routes: Routes = [
     loadChildren: () => import('./finish-registration/finish-registration.module').then( m => m.FinishRegistrationPageModule)
   },
   {
+    path: 'createorjoin',
+    loadChildren: () => import('./createorjoin/createorjoin.module').then( m => m.CreateorjoinPageModule)
+  },
+  {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  },
+  }
 
 
 
