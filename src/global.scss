@@ -24,3 +24,27 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: SFRegular;
+    src: url("./assets/fonts/SFProDisplay-Regular.woff2");
+  }
+  
+  @font-face {
+    font-family: SFSemibold;
+    src: url("./assets/fonts/SFProDisplay-Semibold.woff2");
+  }
+  
+  @font-face {
+    font-family: SFBold;
+    src: url("./assets/fonts/SFProDisplay-Bold.woff2");
+  }
+  
+  @font-face {
+    font-family: SFHeavy;
+    src: url("./assets/fonts/SFProDisplay-Heavy.woff2");
+  }
+  
+  * {
+    font-family: SFRegular;
+  }

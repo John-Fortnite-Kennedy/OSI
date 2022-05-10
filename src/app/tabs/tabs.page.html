@@ -1,20 +1,61 @@
-<ion-tabs>
+<ion-split-pane contentId="main">
 
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Главная</ion-label>
-    </ion-tab-button>
+  <ion-menu contentId="main">
+    <ion-header class="ion-no-border">
+      <div class="header">
+        <ion-icon src="../../assets/svg/custom-icons/logo.svg"></ion-icon>
+        <p>Мой дом</p>
+      </div>
+    </ion-header>
+    <ion-content>
+      <div class="content">
+        <div class="item">
+          <ion-icon src="../../assets/svg/custom-icons/home.svg"></ion-icon>
+          <p>Главная</p>
+        </div>
 
-    <ion-tab-button tab="chat">
-      <ion-icon name="chatbox-outline"></ion-icon>
-      <ion-label>Чат</ion-label>
-    </ion-tab-button>
+        <div class="item">
+          <ion-icon src="../../assets/svg/custom-icons/profile.svg"></ion-icon>
+          <p>Мой профиль</p>
+        </div>
 
-    <ion-tab-button tab="announcements">
-      <ion-icon name="newspaper-outline"></ion-icon>
-      <ion-label>Обьявления</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
+        <div class="item">
+          <ion-icon src="../../assets/svg/custom-icons/settings.svg"></ion-icon>
+          <p>Настройки</p>
+        </div>
 
-</ion-tabs>
+        <div class="item">
+          <ion-icon src="../../assets/svg/custom-icons/people.svg"></ion-icon>
+          <p>Информация об ОСИ</p>
+        </div>
+
+        <div class="item">
+          <ion-icon name="log-out"></ion-icon>
+          <p>Выйти из аккаунта</p>
+        </div>
+      </div>
+  </ion-content>
+
+  </ion-menu>
+
+  <ion-tabs id="main">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="home">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Главная</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="chat">
+        <ion-icon name="chatbox-outline"></ion-icon>
+        <ion-label>Чат</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="announcements">
+        <ion-icon name="newspaper-outline"></ion-icon>
+        <ion-label>Обьявления</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>  
+  </ion-tabs>
+
+</ion-split-pane>
+

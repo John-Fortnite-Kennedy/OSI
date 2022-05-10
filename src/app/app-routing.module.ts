@@ -94,6 +94,10 @@ const routes: Routes = [
     path: 'finish-registration',
     loadChildren: () => import('./finish-registration/finish-registration.module').then( m => m.FinishRegistrationPageModule)
   },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
 
 
 
