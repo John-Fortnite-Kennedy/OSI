@@ -20,13 +20,14 @@ ion-header {
 
 ion-content {
     --background: #eeeeee;
+    --padding-top: 0.5rem;
 }
 
 .contentHolder {
     background: #ffffff;
-    box-shadow: 0 0 0.7rem lightgrey;
+    box-shadow: 0.2rem 0.4rem 0.7rem lightgrey;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
 
     h5 {
         font-weight: 600;
@@ -80,7 +81,7 @@ ion-content {
             --padding-bottom: 0.4rem;
             --background: #3f9e88;
             border-radius: 0.5rem;
-            box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
+            //box-shadow: 1rem 0 0.5rem lightgrey;
     
             ion-icon {
                 color: white;
@@ -95,5 +96,18 @@ ion-content {
         //     border-radius: 0.5rem;
         //     box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
         // }
+    }
+}
+
+#lowerContent {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    #exit {
+        text-transform: none;
+        color: #A54343;
+        font-weight: 600;
+        letter-spacing: 0.01rem;
     }
 }

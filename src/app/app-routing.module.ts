@@ -106,11 +106,11 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  }
-
-
-
-
+  },
+  {
+    path: 'osi-join',
+    loadChildren: () => import('./osi-join/osi-join.module').then( m => m.OsiJoinPageModule)
+  },
 ];
 
 @NgModule({
