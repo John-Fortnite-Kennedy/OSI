@@ -65,12 +65,12 @@ ion-item {
 
 }
 
+
 #joinBtn {
     text-transform: none;
     --background: linear-gradient(90deg, #ba3bbe, #6f34cc);
-
-    ion-label {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
+    --padding-top: 1.5rem;
+    --padding-bottom: 1.5rem;
+    --border-radius: 0.5rem;
+    margin-top: 1rem;
 }

@@ -21,6 +21,10 @@ const routes: Routes = [
         loadChildren: () => import('../announcements/announcements.module').then( m => m.AnnouncementPageModule)
       },
       {
+        path: 'osi',
+        loadChildren: () => import('../createorjoin/createorjoin.module').then( m => m.CreateorjoinPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
