@@ -14,7 +14,7 @@
 <ion-content class="ion-padding" fullscreen="true">
   <ion-item lines="none" button="false">
     <ion-label position="stacked">Город</ion-label>
-    <ion-select id="city" required>
+    <ion-select id="city" required cancelText="Отмена" okText="Выбрать" placeholder="Выберите город">
       <ion-select-option *ngFor="let city of cities">
         {{ city.title }}
       </ion-select-option>
@@ -22,7 +22,7 @@
   </ion-item>
   <ion-item lines="none">
     <ion-label position="stacked"> Адрес</ion-label>
-    <ion-input id="address" required></ion-input>
+    <ion-input id="address" required placeholder="Введите адрес"></ion-input>
   </ion-item>
 
   <ion-button id="joinBtn" expand="block" (click)="presentModal()">
