@@ -1,5 +1,6 @@
 ion-header {
     --background: #eeeeee;
+    padding: 0.5rem 0.5rem 0 0;
 
     ion-toolbar {
         --background: #eeeeee;
@@ -19,24 +20,12 @@ ion-header {
 
 ion-content{
     --ion-background-color:#EEEEEE;
+    --padding-top: 0.5rem;
 }
 
-// ion-item{
-//     ion-input{
-//         margin-top: 1rem;
-//         background-color: white;
-//         border-radius: 0.5rem;
-//         --padding-start: 1rem;
-//         --padding-end: 0.6rem;
-//         --padding-bottom: 0.6rem;
-//         --padding-top: 0.6rem;
-//         font-size: 0.9rem;
-//         font-weight: 600;
-//     }
-// }
-
-ion-item.item-has-focus > ion-label{
-    color: #555555 !important;
+.formHolder {
+    padding: 0;
+    margin: 0;
 }
 
 ion-item {
@@ -46,7 +35,7 @@ ion-item {
     --inner-padding-start: 0;
     --inner-padding-end: 0;
     --padding-start: 0;
-    --padding-bottom: 1rem;
+    --padding-bottom: 0.6rem;
     --padding-end: 0;
     --padding-top: 0;
     --ripple-color: transparent;
@@ -63,13 +52,14 @@ ion-item {
         background: white;
         border-radius: 0.5rem;
         margin-top: 0.8rem;
+        font-weight: 600;
         --padding-start: 0.8rem;
         --padding-bottom: 0.8rem;
         --padding-end: 0.8rem;
         --padding-top: 0.8rem;
-        //font-weight: 600;
         --placeholder-color: gray;
         --placeholder-opacity: 1;
+        --placeholder-font-weight: 500;
     }
 
     ion-select {
@@ -81,22 +71,47 @@ ion-item {
         --padding-bottom: 0.8rem;
         --padding-end: 0.8rem;
         --padding-top: 0.8rem;
-        //font-weight: 600;
         --placeholder-color: gray;
         --placeholder-opacity: 1;
+        font-weight: 600;
+    }
+
+    ion-select::part(placeholder) {
+        font-weight: 500;
     }
 
     ion-select::part(icon) {
         transform: none;
+        font-size: 2rem;
         content: url('../../assets/svg/custom-icons/chevron-down-outline.svg');
     }
 }
 
+ion-item.item-has-focus > ion-label{
+    color: #555555 !important;
+}
+
 #joinBtn {
+    width: 100%;
     text-transform: none;
     --background: linear-gradient(90deg, #ba3bbe, #6f34cc);
     --padding-top: 1.5rem;
     --padding-bottom: 1.5rem;
     --border-radius: 0.5rem;
-    margin-top: 1rem;
+    margin: 1rem 0 1rem 0;
+    font-size: 1rem;
 }
+
+// ion-item{
+//     ion-input{
+//         margin-top: 1rem;
+//         background-color: white;
+//         border-radius: 0.5rem;
+//         --padding-start: 1rem;
+//         --padding-end: 0.6rem;
+//         --padding-bottom: 0.6rem;
+//         --padding-top: 0.6rem;
+//         font-size: 0.9rem;
+//         font-weight: 600;
+//     }
+// }

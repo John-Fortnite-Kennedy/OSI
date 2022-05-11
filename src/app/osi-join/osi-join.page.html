@@ -12,24 +12,22 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
-  <ion-item lines="none" button="false">
-    <ion-label position="stacked">Город</ion-label>
-    <ion-select id="city" required cancelText="Отмена" okText="Выбрать" placeholder="Выберите город">
-      <ion-select-option *ngFor="let city of cities">
-        {{ city.title }}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label position="stacked"> Адрес</ion-label>
-    <ion-input id="address" required placeholder="Введите адрес"></ion-input>
-  </ion-item>
-
-  <ion-button id="joinBtn" expand="block" (click)="presentModal()">
-    <ion-label>
-      Присоединиться
-    </ion-label>
-  </ion-button>
-
-
+  <div class="formHolder">
+    <ion-item lines="none">
+      <ion-label position="stacked">Город</ion-label>
+      <ion-select id="city" placeholder="Выберите город" interface="popover" required>
+        <ion-select-option *ngFor="let city of cities">
+          {{ city.title }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked"> Адрес</ion-label>
+      <ion-input id="address" placeholder="Введите адрес" required></ion-input>
+    </ion-item>
+  
+    <ion-button id="joinBtn" (click)="presentModal()">
+      <ion-label>Присоединиться</ion-label>
+    </ion-button>
+  </div>
 </ion-content>
