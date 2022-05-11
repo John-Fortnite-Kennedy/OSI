@@ -18,7 +18,7 @@ ion-content{
     ion-list{
         height: 35%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         flex-direction: column;
         background: #EEEEEE;
 
@@ -49,18 +49,27 @@ ion-content{
             color: #555555 !important;
         }
     }
-    .buttonHolder{
-        width: 100%;
-        //border-radius: 0.5rem !important;
+
         ion-button{
             width: 100% !important;
             --border-radius: 0.5rem !important;
-            font-size: 1rem;
+            // --padding-top: 2rem;
+            height: 100%;
+            
             text-transform: none;
             --background: linear-gradient(135deg, #ba3bbe, #6f34cc);
             
+
+            ion-label{
+                
+                // margin-top: 2rem;
+                // margin-bottom: 2rem;
+                font-size: 0.9rem !important;
+                color: white !important;
+                font-weight: 200 !important;
+            }
         }
-    }
+    
 
     .text{
         display: flex;
