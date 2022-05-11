@@ -3,9 +3,15 @@ ion-header {
 
     ion-toolbar {
         --background: #eeeeee;
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        padding-top: 1rem;
 
         ion-menu-button{
-            font-size: 3rem;
+            
+            ion-icon{
+                font-size: 2rem;
+            }
         }
 
         ion-title {
@@ -16,7 +22,7 @@ ion-header {
 
         ion-icon {
             font-size: 1.7rem;
-            margin: 0.5rem 1rem 0.5rem 0.5rem;
+            //margin: 0.5rem 1rem 0.5rem 0.5rem;
             //color: #ba3bbe;
             
         }
@@ -137,7 +143,7 @@ ion-content {
 ion-footer {
     //background: #eeeeee;
     padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 0.5rem;
 }

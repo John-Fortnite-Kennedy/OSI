@@ -68,10 +68,6 @@ const routes: Routes = [
     loadChildren: () => import('./repair/repair.module').then( m => m.RepairPageModule)
   },
   {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  },
-  {
     path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
