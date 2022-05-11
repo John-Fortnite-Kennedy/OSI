@@ -6,6 +6,11 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: TabsPage,
     children: [
       {
@@ -19,6 +24,10 @@ const routes: Routes = [
       {
         path: 'announcements',
         loadChildren: () => import('../announcements/announcements.module').then( m => m.AnnouncementPageModule)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
         path: 'osi',

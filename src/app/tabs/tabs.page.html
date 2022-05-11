@@ -9,30 +9,42 @@
     </ion-header>
     <ion-content>
       <div class="content">
-        <div class="item">
-          <ion-icon src="../../assets/svg/custom-icons/home.svg"></ion-icon>
-          <p>Главная</p>
-        </div>
+        <ion-menu-toggle>
+          <div class="item" routerLink="/tabs/home" routerDirection="root">
+            <ion-icon src="../../assets/svg/custom-icons/home.svg"></ion-icon>
+            <p>Главная</p>
+          </div>
+        </ion-menu-toggle>
 
-        <div class="item">
-          <ion-icon src="../../assets/svg/custom-icons/profile.svg"></ion-icon>
-          <p>Мой профиль</p>
-        </div>
+        <ion-menu-toggle>
+          <div class="item" routerLink="/tabs/profile" routerDirection="root">
+            <ion-icon src="../../assets/svg/custom-icons/profile.svg"></ion-icon>
+            <p>Мой профиль</p>
+          </div>
+        </ion-menu-toggle>
 
-        <div class="item">
-          <ion-icon src="../../assets/svg/custom-icons/settings.svg"></ion-icon>
-          <p>Настройки</p>
-        </div>
+        <ion-menu-toggle>
+          <div class="item" routerLink="/tabs/settings" routerDirection="root">
+            <ion-icon src="../../assets/svg/custom-icons/settings.svg"></ion-icon>
+            <p>Настройки</p>
+          </div>
+        </ion-menu-toggle>
 
-        <div class="item">
-          <ion-icon src="../../assets/svg/custom-icons/people.svg"></ion-icon>
-          <p>Информация об ОСИ</p>
-        </div>
 
-        <div class="item">
-          <ion-icon name="log-out"></ion-icon>
-          <p>Выйти из аккаунта</p>
-        </div>
+        <ion-menu-toggle>
+          <div class="item" routerLink="/tabs/info" routerDirection="root">
+            <ion-icon src="../../assets/svg/custom-icons/people.svg"></ion-icon>
+            <p>Информация об ОСИ</p>
+          </div>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <div class="item">
+            <ion-icon name="log-out"></ion-icon>
+            <p>Выйти из аккаунта</p>
+          </div>          
+        </ion-menu-toggle>
+
       </div>
   </ion-content>
 
