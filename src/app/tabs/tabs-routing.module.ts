@@ -30,6 +30,10 @@ const routes: Routes = [
         loadChildren: () => import('../profile/profile.module').then( m => m.ProfilePageModule)
       },
       {
+        path: 'osi',
+        loadChildren: () => import('../createorjoin/createorjoin.module').then( m => m.CreateorjoinPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

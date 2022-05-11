@@ -96,13 +96,17 @@ const routes: Routes = [
     loadChildren: () => import('./createorjoin/createorjoin.module').then( m => m.CreateorjoinPageModule)
   },
   {
+    path: 'apartmentdetails',
+    loadChildren: () => import('./apartmentdetails/apartmentdetails.module').then( m => m.ApartmentdetailsPageModule)
+  },
+  {
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
-  }
-
-
-
-
+  },
+  {
+    path: 'osi-join',
+    loadChildren: () => import('./osi-join/osi-join.module').then( m => m.OsiJoinPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,76 @@
+
+ion-header {
+    --background: #eeeeee;
+
+    ion-toolbar {
+        --background: #eeeeee;
+
+        ion-back-button {
+            color: black;
+        }
+    }
+
+    ion-title {
+        font-weight: 600;
+        color: black;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+ion-content{
+    --ion-background-color:#EEEEEE;
+}
+
+
+
+ion-item {
+    width: 100%;
+    --inner-padding-top: 0;
+    --inner-padding-bottom: 0;
+    --inner-padding-start: 0;
+    --inner-padding-end: 0;
+    --padding-start: 0;
+    --padding-bottom: 1rem;
+    --padding-end: 0;
+    --padding-top: 0;
+
+    ion-label {
+        padding-left: 0.5rem;
+        color: gray;
+        font-weight: 600;
+    }
+
+    ion-input {
+        width: 100%;
+        background: white;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        --padding-start: 1rem;
+        --padding-bottom: 1rem;
+        --padding-end: 1rem;
+        --padding-top: 1rem;
+    }
+
+    ion-select {
+        width: 100%;
+        background:  white;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        --padding-start: 1rem;
+        --padding-bottom: 1rem;
+        --padding-end: 1rem;
+        --padding-top: 1rem;
+    }
+
+}
+
+
+#joinBtn {
+    text-transform: none;
+    --background: linear-gradient(90deg, #ba3bbe, #6f34cc);
+    --padding-top: 1.5rem;
+    --padding-bottom: 1.5rem;
+    --border-radius: 0.5rem;
+    margin-top: 1rem;
+}
