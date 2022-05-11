@@ -44,10 +44,13 @@ ion-list {
         border-radius: 0.6rem;
         --padding-top: 0.6rem;
         --padding-start: 0.6rem;
-        --padding-end: 0.6rem;
         --padding-bottom: 0.6rem;
         margin-bottom: 0.8rem;
         box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
+        
+        align-items:flex-start;
+        
+        
     
         ion-label {    
             h2{
@@ -70,6 +73,10 @@ ion-list {
                 color: darkgrey;
                 margin: 0;
             }
+        }
+
+        ion-badge{
+            --background: #BA5050;
         }
     }
 }
