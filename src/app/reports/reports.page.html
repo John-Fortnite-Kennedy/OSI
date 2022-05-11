@@ -15,20 +15,15 @@
   <div id="noList" *ngIf="reports.length == 0; else filledList"> 
     <p>Нет отчетов</p>
   </div>
-  <ng-template #filledList>
-      <ion-card *ngFor="let report of reports; let id = index;" (click)="presentModal()">
-        <ion-card-header>
-          <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-          <ion-card-title>{{ report.title }}</ion-card-title>
-        </ion-card-header>
-      
-        <ion-card-content>
-          02 февраля 2022
-          <!-- <ion-badge slot="end" color="danger" *ngIf="true">
-            Новое
-          </ion-badge> -->
-        </ion-card-content>
-      </ion-card>
+  <ng-template #filledList>     
+      <ion-list class="ion-no-padding">
+        <ion-item lines="none" *ngFor="let report of reports; let id = index;" (click)="presentModal()">
+            <ion-label class="ion-no-padding ion-no-margin">
+              <h2>{{ report.title }}</h2>
+              <p class="text">02 февраля 2022</p>
+            </ion-label>
+        </ion-item>
+      </ion-list>
   </ng-template>
 
   
