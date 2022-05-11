@@ -1,11 +1,12 @@
 ion-header {
     --background: #eeeeee;
+    padding: 0.5rem;
 
     ion-toolbar {
         --background: #eeeeee;
 
         ion-menu-button{
-            font-size: 3rem;
+            font-size: 1.7rem;
         }
 
         ion-title {
@@ -14,12 +15,11 @@ ion-header {
             padding-right: 0.5rem;
         }
 
-        ion-icon {
-            font-size: 1.7rem;
-            margin: 0.5rem 1rem 0.5rem 0.5rem;
-            // color: #ba3bbe;
-            
-        }
+        // ion-icon {
+        //     font-size: 1.7rem;
+        //     margin: 0.5rem 1rem 0.5rem 0.5rem;
+        //     // color: #ba3bbe;
+        // }
     }
 }
 
