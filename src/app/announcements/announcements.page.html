@@ -9,18 +9,14 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true">
-
-  <div>
-    
-  </div>
+<ion-content class="ion-padding" fullscreen="true">
 
   <div id="noList" *ngIf="announcements.length == 0 && false; else filledList"> 
     <p>Нет объявлений</p>
   </div>
 
   <ng-template style="padding: 1rem;" #filledList>
-    <ion-list class="ion-no-padding">
+    <ion-list>
       <ion-item lines="none" *ngFor="let announcement of announcements; let id = index;" (click)="presentModal(announcement)">
         <ion-label class="ion-no-padding ion-no-margin">
           <h2>{{ announcement.title }}</h2>
@@ -34,7 +30,7 @@
     </ion-list>
   </ng-template>
 
-  <ion-fab *ngIf="false" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab *ngIf="true" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button id="addBtn" [routerLink]="['/add-announcement']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>

@@ -1,6 +1,7 @@
 
 ion-header {
     --background: #eeeeee;
+    padding: 0.5rem 0.5rem 0 0;
 
     ion-toolbar {
         --background: #eeeeee;
@@ -8,13 +9,13 @@ ion-header {
         ion-back-button {
             color: black;
         }
-    }
 
-    ion-title {
-        font-weight: 600;
-        color: black;
-        padding-left: 0;
-        padding-right: 0;
+        ion-title {
+            font-weight: 600;
+            color: black;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
@@ -48,8 +49,9 @@ ion-content {
     .address {
         color: black;
         font-size: 0.9rem;
-        padding-top: 1rem;
+        padding-top: 0.8rem;
         padding-bottom: 1rem;
+        font-weight: 400;
     }
 
     ion-list {
@@ -60,17 +62,22 @@ ion-content {
     ion-item {
         --padding-start: 0;
         --padding-end: 0;
+        --padding-bottom: 0;
 
-        .fname {
-            color: black;
-            font-size: 0.9rem;
-            padding-bottom: 0.4rem;
+        ion-label {
+            .fname {
+                color: #000000;
+                font-size: 0.9rem;
+                padding-bottom: 0.3rem;
+                font-weight: 400;
+            }
+        
+            .phone {
+                color: #797676;
+                font-size: 0.7rem;
+            }
         }
-    
-        .phone {
-            color: grey;
-            font-size: 0.7rem;
-        }
+
 
         ion-button {
             width: 2.5rem;
@@ -79,23 +86,15 @@ ion-content {
             --padding-end: 0.4rem;
             --padding-top: 0.4rem;
             --padding-bottom: 0.4rem;
-            --background: #3f9e88;
-            border-radius: 0.5rem;
-            //box-shadow: 1rem 0 0.5rem lightgrey;
+            --background: #3E9E87;
+            --border-radius: 0.75rem;
+            margin: 0;
     
             ion-icon {
                 color: white;
-                font-size: 2rem;
+                font-size: 1.95rem;
             }
         }
-
-        // ion-icon {
-        //     color: #ffffff;
-        //     background: #3f9e88;
-        //     padding: 0.4rem;
-        //     border-radius: 0.5rem;
-        //     box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
-        // }
     }
 }
 
