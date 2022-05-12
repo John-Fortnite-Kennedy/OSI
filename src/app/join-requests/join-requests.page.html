@@ -12,29 +12,28 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
+  <div id="noList" *ngIf="requests.length == 0; else filledList"> 
+    <p>Нет заявок</p>
+  </div>
   
-
-  
+  <ng-template #filledList>     
     <ion-list class="ion-no-padding">
       <ion-item class="ion-no-padding" lines="none" *ngFor="let request of requests">
         <div class="data">
           <ion-label>
             <span slot="start">
               <h2>{{ request.name }}</h2>
-              <p class="text">{{ request.address }}</p>
+              <p>{{ request.address }}</p>
             </span>
             <p class="date" slot="end">{{ request.date }}</p>
           </ion-label>
-        <div class="buttonHolder">
-          <ion-button size="large" class="call">Звонок</ion-button>
-          <ion-button size="large" class="approve">Одобрить</ion-button>
-          <ion-button size="large" class="decline">Отклонить</ion-button>
+          <div class="buttonHolder">
+            <ion-button size="large" class="call">Звонок</ion-button>
+            <ion-button size="large" class="approve">Одобрить</ion-button>
+            <ion-button size="large" class="decline">Отклонить</ion-button>
+          </div>
         </div>
-      </div>
-
       </ion-item>
     </ion-list>
-  
-
-
+  </ng-template>
 </ion-content>

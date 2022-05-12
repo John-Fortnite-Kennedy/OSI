@@ -12,18 +12,18 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
-  
+  <div id="noList" *ngIf="residents.length == 0; else filledList"> 
+    <p>Нет жителей</p>
+  </div>
 
-  
+  <ng-template #filledList> 
     <ion-list class="ion-no-padding">
       <ion-item lines="none" *ngFor="let resident of residents">
         <ion-label class="ion-no-padding ion-no-margin">
           <h2>{{ resident.name }}</h2>
-          <p class="text">{{ resident.address }}</p>
+          <p>{{ resident.address }}</p>
         </ion-label>
       </ion-item>
     </ion-list>
-  
-
-
+  </ng-template>
 </ion-content>

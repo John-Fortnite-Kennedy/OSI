@@ -1,91 +1,70 @@
 ion-header {
     --background: #eeeeee;
+    padding: 0.5rem 0.5rem 0 0;
 
     ion-toolbar {
         --background: #eeeeee;
 
         ion-back-button {
+            // --icon-font-weight: 800;
+            // --icon-font-size: 1.7rem;
             color: black;
         }
-    }
 
-    ion-title {
-        font-weight: 600;
-        color: black;
-        padding-left: 0;
-        padding-right: 0;
+        ion-title {
+            font-weight: 600;
+            color: black;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
-}
-
-ion-back-button{
-    --icon-font-weight: 800;
-    --icon-font-size: 1.7rem;
 }
 
 ion-content{
     --ion-background-color:#EEEEEE;
+    --padding-top: 0.5rem;
+    --padding-bottom: 0.5rem;
+    --padding-start: 0.5rem;
+    --padding-end: 0.5rem;
 }
 
-// ion-item{
-//     ion-input{
-//         margin-top: 1rem;
-//         background-color: white;
-//         border-radius: 0.5rem;
-//         --padding-start: 1rem;
-//         --padding-end: 0.6rem;
-//         --padding-bottom: 0.6rem;
-//         --padding-top: 0.6rem;
-//         font-size: 0.9rem;
-//         font-weight: 600;
-//     }
-// }
-
-ion-item.item-has-focus > ion-label{
-    color: #555555 !important;
+#noList {
+    p {
+        width: 100%;
+        text-align: center;
+        color: grey;
+    }
 }
 
 ion-list {
     background: transparent;
-    // padding: 0 1rem 1rem 1rem;
-    //padding: 1rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
 
     ion-item {
+        align-items:flex-start;
+        --background: white;
         border-radius: 0.6rem;
-        --padding-top: 0.5rem;
-        --padding-start: 0.7rem;
-        --padding-bottom: 0.3rem;
+        --padding-top: 0.6rem;
+        --padding-bottom: 0.6rem;
+        --padding-start: 0.6rem;
+        --padding-end: 0.6rem;
         margin-bottom: 0.8rem;
         box-shadow: 0.1rem 0.1rem 0.2rem lightgrey;
-        --background: white;
-        align-items:flex-start;
-        
-        
-    
+
         ion-label {    
             h2{
                 font-weight: 600;
                 font-size: 1rem;
-                padding-bottom: 0.4rem;
-                margin: 0;
-            }
-        
-            .text {
-                font-size: 0.75rem;
-                color: #393939;
-                font-weight: 600;
                 padding-bottom: 0.5rem;
                 margin: 0;
             }
         
-            .date {
+            p {
                 font-size: 0.75rem;
-                color: darkgrey;
+                color: #333333;
+                padding: 0;
                 margin: 0;
             }
-        }
-
-        ion-badge{
-            --background: #BA5050;
         }
     }
 }
