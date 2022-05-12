@@ -106,7 +106,19 @@ const routes: Routes = [
   {
     path: 'osi-join',
     loadChildren: () => import('./osi-join/osi-join.module').then( m => m.OsiJoinPageModule)
+  },  {
+    path: 'residents-list',
+    loadChildren: () => import('./residents-list/residents-list.module').then( m => m.ResidentsListPageModule)
   },
+  {
+    path: 'join-requests',
+    loadChildren: () => import('./join-requests/join-requests.module').then( m => m.JoinRequestsPageModule)
+  },
+  {
+    path: 'osi-create',
+    loadChildren: () => import('./osi-create/osi-create.module').then( m => m.OsiCreatePageModule)
+  },
+
 ];
 
 @NgModule({

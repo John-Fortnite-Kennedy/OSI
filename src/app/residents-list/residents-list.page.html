@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="tabs/home"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Список жителей</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen="true">
+  
+
+  
+    <ion-list class="ion-no-padding">
+      <ion-item lines="none" *ngFor="let resident of residents">
+        <ion-label class="ion-no-padding ion-no-margin">
+          <h2>{{ resident.name }}</h2>
+          <p class="text">{{ resident.address }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  
+
+
+</ion-content>

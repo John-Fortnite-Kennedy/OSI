@@ -34,6 +34,14 @@ const routes: Routes = [
         loadChildren: () => import('../createorjoin/createorjoin.module').then( m => m.CreateorjoinPageModule)
       },
       {
+        path: 'residents-list',
+        loadChildren: () => import('../residents-list/residents-list.module').then( m => m.ResidentsListPageModule)
+      },
+      {
+        path: 'join-requests',
+        loadChildren: () => import('../join-requests/join-requests.module').then( m => m.JoinRequestsPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
