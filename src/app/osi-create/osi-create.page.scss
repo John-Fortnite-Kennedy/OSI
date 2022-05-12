@@ -1,24 +1,24 @@
 ion-header {
-    --background: #eeeeee;
+    --background: #EEEEEE;
     padding: 0.5rem 0.5rem 0 0;
 
     ion-toolbar {
-        --background: #eeeeee;
+        --background: #EEEEEE;
 
         ion-back-button {
             color: black;
         }
-    }
 
-    ion-title {
-        font-weight: 600;
-        color: black;
-        padding-left: 0;
-        padding-right: 0;
+        ion-title {
+            font-weight: 600;
+            color: black;
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
 
-ion-content{
+ion-content {
     --ion-background-color:#EEEEEE;
     --padding-top: 0.5rem;
 }
@@ -35,7 +35,7 @@ ion-item {
     --inner-padding-start: 0;
     --inner-padding-end: 0;
     --padding-start: 0;
-    --padding-bottom: 0.6rem;
+    --padding-bottom: 0.5rem;
     --padding-end: 0;
     --padding-top: 0;
     --ripple-color: transparent;
@@ -57,7 +57,7 @@ ion-item {
         --padding-bottom: 0.8rem;
         --padding-end: 0.8rem;
         --padding-top: 0.8rem;
-        --placeholder-color: gray;
+        --placeholder-color: #767676;
         --placeholder-opacity: 1;
         --placeholder-font-weight: 500;
     }
@@ -71,7 +71,7 @@ ion-item {
         --padding-bottom: 0.8rem;
         --padding-end: 0.8rem;
         --padding-top: 0.8rem;
-        --placeholder-color: gray;
+        --placeholder-color: #767676;
         --placeholder-opacity: 1;
         font-weight: 600;
     }
@@ -87,7 +87,7 @@ ion-item {
     }
 }
 
-ion-item.item-has-focus > ion-label{
+ion-item.item-has-focus > ion-label {
     color: #555555 !important;
 }
 
@@ -102,36 +102,31 @@ ion-item.item-has-focus > ion-label{
     font-size: 0.8rem;
 }
 
-#add{
+#add-doc {
+    --padding-bottom: 0;
+}
+
+#add-doc-label {
+    font-size: 0.95rem;
+    margin: 0;
+    padding-left: 0.3rem;
+
+}
+
+#add-doc-button {
     --background: transparent;
     --color: #7F35C7;
     --box-shadow: none;
     font-weight: 600;
-}
-
-#docs{
-    font-size: 0.95rem;
+    text-transform: none;
 }
 
 .docs{
     display: grid;
     padding-bottom: 1rem;
+
     ion-thumbnail{
         --border-radius: 0.5rem;
-        --size: 7rem;
+        --size: 6rem;
     }
 }
-
-// ion-item{
-//     ion-input{
-//         margin-top: 1rem;
-//         background-color: white;
-//         border-radius: 0.5rem;
-//         --padding-start: 1rem;
-//         --padding-end: 0.6rem;
-//         --padding-bottom: 0.6rem;
-//         --padding-top: 0.6rem;
-//         font-size: 0.9rem;
-//         font-weight: 600;
-//     }
-// }

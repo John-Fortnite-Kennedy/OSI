@@ -12,9 +12,18 @@ import { ReportPage } from '../report/report.page';
 export class ReportsPage implements OnInit {
 
   reports = [
-    { title: "Отчет по 13.03.2021" },
-    { title: "Отчет по 12.03.2021" },
-    { title: "Отчет по 11.03.2021" }
+    { 
+      title: "Финансовый отчет за Январь 2022",
+      date: "02 февраля 2022"
+    },
+    { 
+      title: "Финансовый отчет за Декабрь 2021",
+      date: "01 января 2022"
+    },
+    { 
+      title: "Финансовый отчет за Ноябрь 2021",
+      date: "05 декабрь 2021"
+    }
   ]
 
   constructor(private router: Router, private modalController: ModalController) { }

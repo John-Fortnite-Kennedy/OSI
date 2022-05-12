@@ -12,44 +12,33 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
+  <div class="formHolder">
+    <ion-item lines="none" button="false">
+      <ion-label position="stacked">Город</ion-label>
+      <ion-select id="city" placeholder="Выберите город" nterface="popover" required>
+        <ion-select-option *ngFor="let city of cities">
+          {{ city.title }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Адрес</ion-label>
+      <ion-input id="address" placeholder="Введите адрес" required></ion-input>
+    </ion-item>
   
-
+    <ion-item id="add-doc" lines="none">
+      <ion-label id="add-doc-label" slot="start">Документы</ion-label>
+      <ion-button id="add-doc-button" slot="end">Добавить</ion-button>
+    </ion-item>
   
-  <ion-item lines="none" button="false">
-    <ion-label position="stacked">Город</ion-label>
-    <ion-select id="city" required cancelText="Отмена" okText="Выбрать" placeholder="Выберите город">
-      <ion-select-option *ngFor="let city of cities">
-        {{ city.title }}
-      </ion-select-option>
-    </ion-select>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label position="stacked"> Адрес</ion-label>
-    <ion-input id="address" required placeholder="Введите адрес"></ion-input>
-  </ion-item>
-
-  <ion-item lines="none">
-    <ion-label id="docs" slot="start">Документы</ion-label>
-    <ion-button id="add" slot="end">Добавить</ion-button>
-  </ion-item>
-
-  <div class="docs">
-    
-      <ion-thumbnail>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%BE_%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D0%B8_%D1%82%D0%B8%D1%84%D0%BB%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8.jpg/1200px-%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82_%D0%BE_%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B8%D0%B8_%D1%82%D0%B8%D1%84%D0%BB%D0%BE%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D0%BA%D0%B8.jpg">
-      </ion-thumbnail>
-
-
-      
-
+    <div class="docs">
+        <ion-thumbnail>
+          <img src="../../assets/imgs/icon-pdf.png">
+        </ion-thumbnail>
+    </div>
+  
+    <ion-button id="joinBtn" expand="block">
+      <ion-label>Создать</ion-label>
+    </ion-button>
   </div>
-
-  <ion-button id="joinBtn" expand="block">
-    <ion-label>
-      Создать
-    </ion-label>
-  </ion-button>
-  
-
-
 </ion-content>
