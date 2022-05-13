@@ -30,8 +30,11 @@ export class RepairsPage implements OnInit {
       cssClass: 'my-custom-class',
       componentProps: {
         'title': tmp.title,
+        // 'description':  tmp.description,
         'date':  tmp.date
-      }
+      },
+      initialBreakpoint: 0.92,
+    breakpoints: [0, 0.92, 1] 
     });
     return await modal.present();
   }

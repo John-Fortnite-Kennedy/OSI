@@ -1,22 +1,27 @@
 
-ion-header {
-    ion-toolbar {
-      --background: #115351;
-      --color: #ffffff;
+ion-content{
+    --ion-background-color:#ffffff;
+    --padding-end: 1.5rem;
+    --padding-start: 1.5rem;
+
+    h1 {
+        margin: 0;
+        padding: 1rem 0 1rem 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    
+    h2 {
+        font-size: 0.9rem;
+        color: #8F8F8F;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    p {
+        color: black;
+        font-size: 0.95rem;
+        text-align: justify;
     }
 }
 
-ion-back-button {
-    color: white;
-}
-
-ion-button {
-    ion-icon {
-        color: white;
-    }
-}
-
-h2 {
-    font-weight: 600;
-    color: #115351;
-}

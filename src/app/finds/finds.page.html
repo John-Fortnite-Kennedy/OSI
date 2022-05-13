@@ -7,21 +7,21 @@
         icon="chevron-back-sharp">
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Отчеты</ion-title>
+    <ion-title>Бюро находок</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
-  <div id="noList" *ngIf="reports.length == 0; else filledList"> 
-    <p>Нет отчетов</p>
+  <div id="noList" *ngIf="finds.length == 0; else filledList"> 
+    <p>Нет находок</p>
   </div>
 
   <ng-template #filledList>     
       <ion-list>
-        <ion-item lines="none" *ngFor="let report of reports; let id = index;" (click)="presentModal(report)">
+        <ion-item lines="none" *ngFor="let find of finds; let id = index;" (click)="presentModal(find)">
             <ion-label class="ion-no-padding ion-no-margin">
-              <h2>{{ report.title }}</h2>
-              <p>{{ report.date }}</p>
+              <h2>{{ find.title }}</h2>
+              <p>{{ find.date }}</p>
             </ion-label>
         </ion-item>
       </ion-list>

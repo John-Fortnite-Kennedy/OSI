@@ -11,6 +11,8 @@ ion-content{
     }
     
     ion-img::part(image) {
+        height: 10rem;
+        width: 10rem;
         border-radius: 2rem;
         box-shadow: 0.2rem 0.2rem 0.4rem rgba($color: #000000, $alpha: 0.2);
     }

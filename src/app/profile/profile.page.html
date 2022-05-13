@@ -1,9 +1,24 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="tabs/home"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Профиль</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h2>Profile</h2>
+<ion-content class="ion-padding" fullscreen="true">
+  <div class="contentHolder">
+    <h5>Пользователь</h5>
+    <ion-item lines="none">
+      <ion-label>
+        <p class="fname">Казтурганов Темирлан</p>
+        <p class="phone">+7 701 939 00 99</p>
+      </ion-label>
+    </ion-item>
+  </div>
 </ion-content>

@@ -11,7 +11,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" fullscreen="true">
   <ion-searchbar animated placeholder="Поиск"></ion-searchbar>
 
   <div id="noList" *ngIf="services.length == 0; else filledList"> 
@@ -20,9 +20,9 @@
 
   <ng-template #filledList>
     <ion-list>
-      <ion-item *ngFor="let service of services; let id = index;">
+      <ion-item lines="none" *ngFor="let service of services; let id = index;">
         <div>
-          <ion-label>
+          <ion-label class="ion-no-padding ion-no-margin">
             <h2>{{ service.title }}</h2>
             <p>{{ service.phone }}</p>
           </ion-label>

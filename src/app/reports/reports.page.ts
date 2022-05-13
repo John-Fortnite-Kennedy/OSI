@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ReportPage } from '../report/report.page';
-
 
 @Component({
   selector: 'app-reports',
@@ -15,35 +13,34 @@ export class ReportsPage implements OnInit {
     { 
       title: "Финансовый отчет за Январь 2022",
       date: "02 февраля 2022"
-    },
+    },    
     { 
-      title: "Финансовый отчет за Декабрь 2021",
-      date: "01 января 2022"
-    },
+      title: "Финансовый отчет за Январь 2022",
+      date: "02 февраля 2022"
+    },    
     { 
-      title: "Финансовый отчет за Ноябрь 2021",
-      date: "05 декабрь 2021"
+      title: "Финансовый отчет за Январь 2022",
+      date: "02 февраля 2022"
     }
   ]
 
-  constructor(private router: Router, private modalController: ModalController) { }
+  constructor(private modalController: ModalController) { }
 
-  async presentModal() {
+  ngOnInit() { }
+
+  async presentModal(tmp) {
     const modal = await this.modalController.create({
       component: ReportPage,
       cssClass: 'my-custom-class',
+      componentProps: {
+        'title': tmp.title,
+        'description':  tmp.description,
+        'date':  tmp.date
+      },
+      initialBreakpoint: 0.92,
+    breakpoints: [0, 0.92, 1] 
     });
     return await modal.present();
-  }
-
-  ngOnInit() { 
-
-  }
-
-
-
-  showReport() {
-    //this.router.navigate(['/report'])
   }
 
 }

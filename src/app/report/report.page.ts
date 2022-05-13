@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { CategoryScale, Chart, Tooltip, PieController, ArcElement, Legend} from 'chart.js'; 
 Chart.register( CategoryScale, Tooltip, PieController, ArcElement, Legend);
@@ -10,13 +10,11 @@ Chart.register( CategoryScale, Tooltip, PieController, ArcElement, Legend);
 })
 export class ReportPage implements OnInit {
 
-  constructor(private modalController: ModalController) { }
+  @Input() title: string;
+  @Input() description: string;
+  @Input() date: string;
 
-  reports = [
-    { title: "Отчет по 13.03.2021" },
-    { title: "Отчет по 12.03.2021" },
-    { title: "Отчет по 11.03.2021" }
-  ]
+  constructor(private modalController: ModalController) { }
 
   ngOnInit() { 
     const myChart = new Chart("pieChart", { 

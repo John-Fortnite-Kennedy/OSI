@@ -29,6 +29,8 @@ export class AnnouncementsPage implements OnInit {
   ];
 
   constructor(private modalController: ModalController) { }
+  
+  ngOnInit() { }
 
   async presentModal(tmp) {
     const modal = await this.modalController.create({
@@ -44,8 +46,4 @@ export class AnnouncementsPage implements OnInit {
     });
     return await modal.present();
   }
-
-  ngOnInit() {
-  }
-
 }

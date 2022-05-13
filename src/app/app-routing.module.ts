@@ -118,6 +118,14 @@ const routes: Routes = [
     path: 'osi-create',
     loadChildren: () => import('./osi-create/osi-create.module').then( m => m.OsiCreatePageModule)
   },
+  {
+    path: 'finds',
+    loadChildren: () => import('./finds/finds.module').then( m => m.FindsPageModule)
+  },
+  {
+    path: 'find',
+    loadChildren: () => import('./find/find.module').then( m => m.FindPageModule)
+  },
 
 ];
 
