@@ -126,6 +126,10 @@ const routes: Routes = [
     path: 'find',
     loadChildren: () => import('./find/find.module').then( m => m.FindPageModule)
   },
+  {
+    path: 'add-find',
+    loadChildren: () => import('./add-find/add-find.module').then( m => m.AddFindPageModule)
+  },
 
 ];
 

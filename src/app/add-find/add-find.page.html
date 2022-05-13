@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="finds"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить находку</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" fullscreen="true">
+  <div class="formHolder">
+    <ion-item lines="none">
+      <ion-label position="stacked">Описание</ion-label>
+      <ion-input type="text" [(ngModel)]="title" placeholder="Что вы нашли? или потеряли" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label position="stacked">Номер телефона</ion-label>
+      <ion-input type="text" [(ngModel)]="description" placeholder="Номер телефона" rows="5" required></ion-input>
+    </ion-item>
+
+    <div id="imageSection">
+      <ion-label>
+        <h1>Фото</h1>
+      </ion-label>
+      <ion-img src="../../assets/imgs/addPhoto.png" (click)="open()"></ion-img>
+    </div>
+
+    <ion-button id="joinBtn">
+      <ion-label>Добавить</ion-label>
+    </ion-button>
+  </div>
+</ion-content>

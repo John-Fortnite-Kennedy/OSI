@@ -11,25 +11,19 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" fullscreen="true">
   <div class="formHolder">
-    <div class="inputHolder">
-      <ion-label>
-        <h1>Название</h1>
-        <p>Введите название отчета, для отображения в списке</p>
-      </ion-label>
-      <ion-input type="text" [(ngModel)]="title" placeholder="Название отчета" clear-input></ion-input>
-    </div>
+    <ion-item lines="none">
+      <ion-label position="stacked">Название ремонта</ion-label>
+      <ion-input type="text" [(ngModel)]="title" placeholder="Название ремонта" required></ion-input>
+    </ion-item>
 
-    <div class="inputHolder">
-      <ion-label>
-        <h1>Описание</h1>
-        <p>Описание ремонта, что было сделано, в какой срок и т.д.</p>
-      </ion-label>
-      <ion-textarea type="text" [(ngModel)]="description" placeholder="Описание ремонта" rows="5"></ion-textarea>
-    </div>
+    <ion-item lines="none">
+      <ion-label position="stacked">Описание ремонта в деталях</ion-label>
+      <ion-input type="text" [(ngModel)]="description" placeholder="Описание ремонта" rows="5" required></ion-input>
+    </ion-item>
 
-    <div class="inputHolder">
+    <ion-item lines="none">
       <ion-grid>
         <ion-row>
           <ion-col>
@@ -46,10 +40,10 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-    </div>
+    </ion-item>
 
-    <ion-button expand="full" fill="solid">
-      Отправить
+    <ion-button id="joinBtn">
+      <ion-label>Добавить</ion-label>
     </ion-button>
   </div>
 </ion-content>
