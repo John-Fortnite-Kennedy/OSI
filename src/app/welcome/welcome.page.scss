@@ -5,7 +5,7 @@ body{
     height: 100%;
   }
   ion-slides{
-    --bullet-background-active:#07575B;
+    --bullet-background-active: #6f34cc;
     --bullet-background: #808080;
   }
   ion-slide{
@@ -35,7 +35,7 @@ body{
     z-index: 2;
   
     ion-icon{
-      color:#07575B;
+      color: #6f34cc;
       font-size: 3rem;
     }
   }
@@ -43,7 +43,7 @@ body{
     position: absolute;
     bottom: 3rem;
     left: 1rem;
-    color: #07575b;
+    color: #6f34cc;
     font-weight: bold;
     z-index: 2;
   }

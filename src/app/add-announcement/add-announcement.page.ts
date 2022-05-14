@@ -14,4 +14,8 @@ export class AddAnnouncementPage implements OnInit {
 
   ngOnInit() { }
 
+  open() {
+    alert('Загрузка изображения');
+  }
+
 }
