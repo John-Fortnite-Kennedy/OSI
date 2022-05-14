@@ -12,21 +12,19 @@
 
 <ion-content class="ion-padding" fullscreen="true">
   <div class="chatHolder">
-
-    <div class="otherMsg">
-      <div class="container">
-        <p class="message">Соседи, кто шумит? Спать невозможно.</p>
-        <p class="time">23:45</p>
-        <p class="sender">Зарина, квартира 43</p>
-      </div>
-    </div>
-    <div class="myMsg">
-      <div class="container">
-        <p class="message">Да, тоже слышу шум, сделайте музыку потише, иначе вызову участкового.</p>
-        <p class="time">23:46</p>
-      </div>
-    </div>
+    <!-- {{allmessages[0].text}} -->
     
+      <div *ngFor="let message of allmessages" [ngClass]="message?.senderId == myId ? 'myMsg' : 'otherMsg'">
+        <div class="container">
+          <p class="message">{{message?.text}}</p>
+          <p class="time">{{message?.sentTime}}</p>
+          <p *ngIf="message?.senderId != myId" class="sender">Зарина, квартира 43</p>
+        </div>
+      </div>
+   
+    
+
+
   </div>
 </ion-content>
 

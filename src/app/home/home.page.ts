@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides} from '@ionic/angular';
+import { ApiCallerService } from '../api-caller.service';
 
 @Component({
   selector: 'app-home',
@@ -18,19 +19,25 @@ export class HomePage {
   name;
   surname;
   role;
+  phone;
+  tmp;
+
 
   
 
-  constructor(public router: Router) {
+  constructor(public router: Router, public api: ApiCallerService) {
     this.userinfo  =  sessionStorage.getItem('user');
     this.name = this.userinfo.substring(this.userinfo.indexOf('"name":"')+8, this.userinfo.indexOf('","surname"'));
     this.surname = this.userinfo.substring(this.userinfo.indexOf('"surname":"')+11, this.userinfo.indexOf('","phone"'));
     this.role = this.userinfo.substring(this.userinfo.indexOf('"globalRole":"')+14, this.userinfo.indexOf('","isOnline"'));
-    var tmp = this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length);
+    //this.phone = this.userinfo.substring(this.userinfo.indexOf('"phone":')+9, this.userinfo.indexOf('","lastCode":'));
+    this.tmp = this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length);
     //console.log(tmp.substring(10, tmp.indexOf(',"name"')));
-    tmp = tmp.substring(10, tmp.indexOf(',"name"'));
-    sessionStorage.setItem('houseId', tmp);
+    this.tmp = this.tmp.substring(10, this.tmp.indexOf(',"name"'));
+    sessionStorage.setItem('houseId', this.tmp);
   }
+
+  
 
   slideOpts = {
     initialSlide: 0,
@@ -85,7 +92,7 @@ export class HomePage {
     console.log(this.userinfo);
     //var tmp = this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length);
     //console.log(tmp.substring(10, tmp.indexOf(',"name"')));
-    //console.log(this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length));
+    //console.log(this.userinfo.substring(this.userinfo.indexOf('"phone":')+9, this.userinfo.indexOf('","lastCode":')));
   }
 
   

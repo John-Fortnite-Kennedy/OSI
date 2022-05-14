@@ -21,7 +21,7 @@ export class WaitPage implements OnInit {
   subscription: Subscription;
 
   ngOnInit() {
-    //this.check();
+    this.check();
     const source = interval(5000);
     const text = 'Your Text Here';
     this.subscription = source.subscribe(val => this.check());
@@ -49,8 +49,9 @@ export class WaitPage implements OnInit {
 
     var response = this.api.sendGetRequestWithAuth("/auth/userdata")
           response.subscribe(data => {
+
             console.log(data['payload']);
-            if (data['payload'].houses != null){
+            if (data['payload'].houses[0].verified == true){
               this.router.navigateByUrl('/tabs/home');
             }
             
