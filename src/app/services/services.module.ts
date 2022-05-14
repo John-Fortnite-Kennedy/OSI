@@ -8,12 +8,15 @@ import { ServicesPageRoutingModule } from './services-routing.module';
 
 import { ServicesPage } from './services.page';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ServicesPageRoutingModule
+    ServicesPageRoutingModule,
+    Ng2SearchPipeModule
   ],
   declarations: [ServicesPage]
 })

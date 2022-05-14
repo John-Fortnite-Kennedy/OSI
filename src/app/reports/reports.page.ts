@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ApiCallerService } from '../api-caller.service';
 import { ReportPage } from '../report/report.page';
 
 @Component({
@@ -9,22 +10,27 @@ import { ReportPage } from '../report/report.page';
 })
 export class ReportsPage implements OnInit {
 
-  reports = [
-    { 
-      title: "Финансовый отчет за Январь 2022",
-      date: "02 февраля 2022"
-    },    
-    { 
-      title: "Финансовый отчет за Январь 2022",
-      date: "02 февраля 2022"
-    },    
-    { 
-      title: "Финансовый отчет за Январь 2022",
-      date: "02 февраля 2022"
-    }
-  ]
+  houseId;
 
-  constructor(private modalController: ModalController) { }
+  reports = [];
+
+  constructor(public api: ApiCallerService, private modalController: ModalController){
+    this.api.myjwt =  sessionStorage.getItem('token');
+    this.houseId =  sessionStorage.getItem('houseId');
+
+    var response = this.api.sendGetRequestWithAuth("/auth/house/"+this.houseId+"/report/get")
+          response.subscribe(data => {
+            console.log(data['payload']);
+            for(let i=0;i<data['payload'].length;i++){
+              this.reports.push(data['payload'][i]);
+            }
+            console.log(this.reports);
+            
+          }, error => {
+            // Add if login and password is incorrect.
+            this.api.errorHandler(error.status);
+          })
+  }
 
   ngOnInit() { }
 

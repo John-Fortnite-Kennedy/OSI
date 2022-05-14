@@ -8,14 +8,14 @@
   <div class="formHolder">
     <ion-item lines="none">
       <ion-label position="stacked">Блок или номер дома</ion-label>
-      <ion-input placeholder="Введите блок или номер дома" required></ion-input>
+      <ion-input [(ngModel)]="this.block" placeholder="Введите блок или номер дома" required></ion-input>
     </ion-item>
     <ion-item lines="none">
       <ion-label position="stacked">Номер квартиры</ion-label>
-      <ion-input placeholder="Введите номер квартиры" required></ion-input>
+      <ion-input [(ngModel)]="this.flat" placeholder="Введите номер квартиры" required></ion-input>
     </ion-item>
 
-    <ion-button class="ion-no-margin">
+    <ion-button [disabled]="!this.block || !this.flat" class="ion-no-margin" (click)="send()">
       <ion-label>Отправить запрос</ion-label>
     </ion-button> 
   </div>

@@ -20,8 +20,8 @@
       <ion-list>
         <ion-item lines="none" *ngFor="let report of reports; let id = index;" (click)="presentModal(report)">
             <ion-label class="ion-no-padding ion-no-margin">
-              <h2>{{ report.title }}</h2>
-              <p>{{ report.date }}</p>
+              <h2>{{ report.name }}</h2>
+              <p>{{ report.createdTime }}</p>
             </ion-label>
         </ion-item>
       </ion-list>

@@ -8,9 +8,10 @@ import { ModalController } from '@ionic/angular';
 })
 export class FindPage implements OnInit {
 
-  @Input() title: string;
+  @Input() name: string;
   @Input() description: string;
-  @Input() date: string;
+  @Input() createdTime: string;
+  @Input() path: string;
 
   constructor(private modalController: ModalController) { }
 

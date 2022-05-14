@@ -32,65 +32,44 @@ export class CodeConfirmationPage implements OnInit {
   submit(){
     console.log(this.code.toString().replace(/\,/g, ''));
     if(this.code.toString().replace(/\,/g, '') == this.verify){
-      //console.log("true");
-      //this.router.navigateByUrl('/tabs/home');
-
-      
-
 
       var data = {
         "phone": this.phone,
         "lastCode": this.verify
       }
-      //console.log(data)
       var response = this.api.sendPostRequest(data, "/common/verify")
       response.subscribe(data => {
-        //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
         console.log(data['payload']);
         sessionStorage.setItem('token', data['payload']);
 
           var response = this.api.sendGetRequestWithAuth("/auth/userdata")
           response.subscribe(data => {
-            //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
             console.log("this");
             console.log(data['payload']);
             this.userdata = data['payload'];
             
-            //sessionStorage.setItem('token', data['payload']);
+            sessionStorage.setItem('user', JSON.stringify(this.userdata));
 
-            if (this.userdata.user.name == "" && this.userdata.user.name == null && this.userdata.user.surname == "" && this.userdata.user.surname == null){
+            if (this.userdata.user.name == "" || this.userdata.user.name == null || this.userdata.user.surname == "" || this.userdata.user.surname == null){
               this.router.navigateByUrl('/finish-registration');
+              console.log("нет имени");
             } else if (this.userdata.houses == null){
-              this.router.navigateByUrl('/finish-registration');
+              this.router.navigateByUrl('/tabs/osi');
               console.log("нет домов");
-              //this.router.navigateByUrl('/tabs/home');
             } else {
               this.router.navigateByUrl('/tabs/home');
             }
-            
+    
           }, error => {
-            // Add if login and password is incorrect.
             this.api.errorHandler(error.status);
           })
-
-        //this.router.navigateByUrl('/finish-registration');
       }, error => {
-        // Add if login and password is incorrect.
         this.api.errorHandler(error.status);
       })
 
     } else {
       alert("not true");
     }
-
-    
-    //console.log(data)
-    
-
-
-  
-
-
   }
 
   again(){
@@ -111,7 +90,6 @@ export class CodeConfirmationPage implements OnInit {
       console.log(data['payload'] + " again");
       //this.router.navigateByUrl('/code-confirmation');
     }, error => {
-      // Add if login and password is incorrect.
       this.api.errorHandler(error.status);
     })
 
@@ -128,7 +106,6 @@ export class CodeConfirmationPage implements OnInit {
       if(this.current<3){
         this.current++;
       }
-      //console.log(this.current);
       if(this.code[3]!=null){
         console.log("done");
         this.decent = true;

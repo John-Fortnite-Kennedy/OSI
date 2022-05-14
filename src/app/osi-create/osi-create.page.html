@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-        defaultHref="tabs/home"
+            defaultHref="tabs/osi"
         text=""
         icon="chevron-back-sharp">
       </ion-back-button>
@@ -12,12 +12,12 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
-  <div class="formHolder">
+    <div class="formHolder">
     <ion-item lines="none" button="false">
       <ion-label position="stacked">Город</ion-label>
       <ion-select id="city" placeholder="Выберите город" interface="popover" required>
-        <ion-select-option *ngFor="let city of cities">
-          {{ city.title }}
+        <ion-select-option *ngFor="let location of locations">
+          {{ location.city }}
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -41,4 +41,3 @@
       <ion-label>Создать</ion-label>
     </ion-button>
   </div>
-</ion-content>

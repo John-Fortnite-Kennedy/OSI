@@ -106,7 +106,8 @@ const routes: Routes = [
   {
     path: 'osi-join',
     loadChildren: () => import('./osi-join/osi-join.module').then( m => m.OsiJoinPageModule)
-  },  {
+  },
+  {
     path: 'residents-list',
     loadChildren: () => import('./residents-list/residents-list.module').then( m => m.ResidentsListPageModule)
   },
@@ -137,6 +138,10 @@ const routes: Routes = [
   {
     path: 'add-request',
     loadChildren: () => import('./add-request/add-request.module').then( m => m.AddRequestPageModule)
+  },
+  {
+    path: 'wait',
+    loadChildren: () => import('./wait/wait.module').then( m => m.WaitPageModule)
   },
 
 ];

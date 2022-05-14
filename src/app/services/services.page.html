@@ -12,7 +12,7 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
-  <ion-searchbar animated placeholder="Поиск"></ion-searchbar>
+  <ion-searchbar animated placeholder="Поиск" [(ngModel)]="searchTerm"></ion-searchbar>
 
   <div id="noList" *ngIf="services.length == 0; else filledList"> 
     <p>Нет служб</p>
@@ -20,10 +20,10 @@
 
   <ng-template #filledList>
     <ion-list>
-      <ion-item lines="none" *ngFor="let service of services; let id = index;">
+      <ion-item lines="none" *ngFor="let service of services | filter:searchTerm; let id = index;">
         <div>
           <ion-label class="ion-no-padding ion-no-margin">
-            <h2>{{ service.title }}</h2>
+            <h2>{{ service.name }}</h2>
             <p>{{ service.phone }}</p>
           </ion-label>
         </div>

@@ -19,9 +19,9 @@
     <ion-list>
       <ion-item lines="none" *ngFor="let announcement of announcements; let id = index;" (click)="presentModal(announcement)">
         <ion-label class="ion-no-padding ion-no-margin">
-          <h2>{{ announcement.title }}</h2>
+          <h2>{{ announcement.name }}</h2>
           <p class="text">{{ announcement.description }}</p>
-          <p class="date">{{ announcement.date }}</p>
+          <p class="date">{{ announcement.createdTime }}</p>
         </ion-label>
         <ion-badge>
           Новое

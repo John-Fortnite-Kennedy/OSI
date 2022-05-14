@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button
-        defaultHref="tabs/home"
+        defaultHref="tabs/osi"
         text=""
         icon="chevron-back-sharp">
       </ion-back-button>
@@ -15,18 +15,22 @@
   <div class="formHolder">
     <ion-item lines="none">
       <ion-label position="stacked">Город</ion-label>
-      <ion-select id="city" placeholder="Выберите город" interface="popover" required>
-        <ion-select-option *ngFor="let city of cities">
-          {{ city.title }}
+      <ion-select [(ngModel)]="this.city" id="city" placeholder="Выберите город" interface="popover" (ionChange)="chosen()"	 required>
+        <ion-select-option *ngFor="let location of locations">
+          {{ location.city }}
         </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item lines="none">
       <ion-label position="stacked">Адрес</ion-label>
-      <ion-input id="address" placeholder="Введите адрес" required></ion-input>
+      <input [disabled]="!allow" [(ngModel)]="this.address" list="houses" id="address" placeholder="Введите адрес" required>
     </ion-item>
+
+    <datalist id="houses">
+      <option *ngFor="let option of options" value="{{option}}"></option>
+    </datalist>
   
-    <ion-button id="joinBtn" (click)="presentModal()">
+    <ion-button id="joinBtn" [disabled]="!allow || address==null || address==''" (click)="presentModal()">
       <ion-label>Присоединиться</ion-label>
     </ion-button>
   </div>

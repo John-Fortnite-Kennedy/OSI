@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiCallerService } from '../api-caller.service';
 
 @Component({
   selector: 'app-services',
@@ -7,25 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesPage implements OnInit {
 
-  services = [
-    {
-      title: "Клининг",
-      phone: "+7 (700) 000 0000",
-      isWhatsApp: true
-    },
-    { 
-      title: "Лифт",
-      phone: "+7 (700) 000 0001",
-      isWhatsApp: false
-    },
-    { 
-      title: "Охрана",
-      phone: "+7 (700) 000 0002",
-      isWhatsApp: true
-    }
-  ];
+  houseId;
 
-  constructor() { }
+  services = [];
+
+  searchTerm: string;
+
+  constructor(public router: Router, public api: ApiCallerService) {
+    this.api.myjwt =  sessionStorage.getItem('token');
+    this.houseId =  sessionStorage.getItem('houseId');
+
+    var response = this.api.sendGetRequestWithAuth("/auth/house/"+this.houseId+"/service/get")
+          response.subscribe(data => {
+            console.log(data['payload']);
+            for(let i=0;i<data['payload'].length;i++){
+              this.services.push(data['payload'][i]);
+            }
+            console.log(this.services);
+            
+          }, error => {
+            // Add if login and password is incorrect.
+            this.api.errorHandler(error.status);
+          })
+  }
 
   ngOnInit() { }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { AnnouncementPage } from '../announcement/announcement.page';
+import { ApiCallerService } from '../api-caller.service';
 
 @Component({
   selector: 'app-announcement',
@@ -9,26 +10,25 @@ import { AnnouncementPage } from '../announcement/announcement.page';
 })
 export class AnnouncementsPage implements OnInit {
 
-  announcements = [
-    {
-      title: "Отключение воды",
-      description: "24 февраля в 16:00 будет отключена горячая вода в связи с заменой труб. Просим проявить терпение",
-      date: "23 февраля 2022"
-    },
-    {
-      title: "Собрание ОСИ",
-      description: "13 февраля будет проведено собрание всех жителей дома для решения вопросов связанных с ОСИ. Необходимо быть всем!",
-      date: "10 февраля 2022"
-    },
-    {
-      title: "Очистка снега",
-      description: "10 января в 12:00 будет производиться чистка снега во дворе. Просим не парковать машины в это время",
-      date: "07 февраля 2022"
-    },
+  houseId;
 
-  ];
+  announcements = [];
 
-  constructor(private modalController: ModalController) { }
+  constructor(private modalController: ModalController, public api: ApiCallerService) { 
+    this.api.myjwt =  sessionStorage.getItem('token');
+    this.houseId =  sessionStorage.getItem('houseId');
+
+    var response = this.api.sendGetRequestWithAuth("/auth/house/"+this.houseId+"/announcement/get")
+          response.subscribe(data => {
+            console.log(data['payload']); 
+            for(let i=0;i<data['payload'].length;i++){
+              this.announcements.push(data['payload'][i]);
+            }
+          }, error => {
+              // Add if login and password is incorrect.
+              this.api.errorHandler(error.status);
+          })
+  }
   
   ngOnInit() { }
 
@@ -37,12 +37,12 @@ export class AnnouncementsPage implements OnInit {
       component: AnnouncementPage,
       cssClass: 'my-custom-class',
       componentProps: {
-        'title': tmp.title,
+        'name': tmp.name,
         'description':  tmp.description,
-        'date':  tmp.date
+        'createdTime':  tmp.createdTime
       },
       initialBreakpoint: 0.92,
-    breakpoints: [0, 0.92, 1] 
+    breakpoints: [0, 0.92] 
     });
     return await modal.present();
   }

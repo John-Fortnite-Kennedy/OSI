@@ -13,7 +13,24 @@ export class HomePage {
 
   show = false;
 
-  constructor(public router: Router) {}
+
+  userinfo;
+  name;
+  surname;
+  role;
+
+  
+
+  constructor(public router: Router) {
+    this.userinfo  =  sessionStorage.getItem('user');
+    this.name = this.userinfo.substring(this.userinfo.indexOf('"name":"')+8, this.userinfo.indexOf('","surname"'));
+    this.surname = this.userinfo.substring(this.userinfo.indexOf('"surname":"')+11, this.userinfo.indexOf('","phone"'));
+    this.role = this.userinfo.substring(this.userinfo.indexOf('"globalRole":"')+14, this.userinfo.indexOf('","isOnline"'));
+    var tmp = this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length);
+    //console.log(tmp.substring(10, tmp.indexOf(',"name"')));
+    tmp = tmp.substring(10, tmp.indexOf(',"name"'));
+    sessionStorage.setItem('houseId', tmp);
+  }
 
   slideOpts = {
     initialSlide: 0,
@@ -62,6 +79,13 @@ export class HomePage {
 
   reachedEnd() {
     this.show = true;
+  }
+
+  ngOnInit(){
+    console.log(this.userinfo);
+    //var tmp = this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length);
+    //console.log(tmp.substring(10, tmp.indexOf(',"name"')));
+    //console.log(this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length));
   }
 
   

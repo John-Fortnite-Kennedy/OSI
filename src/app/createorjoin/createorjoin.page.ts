@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-createorjoin',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateorjoinPage implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
+
+  join(){
+    this.router.navigateByUrl('/osi-join');
+  }
+
+  create(){
+    this.router.navigateByUrl('/osi-create');
+  }
 
   ngOnInit() {
   }

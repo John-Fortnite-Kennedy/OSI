@@ -20,8 +20,8 @@
       <ion-list>
         <ion-item lines="none" *ngFor="let find of finds; let id = index;" (click)="presentModal(find)">
             <ion-label class="ion-no-padding ion-no-margin">
-              <h2>{{ find.title }}</h2>
-              <p>{{ find.date }}</p>
+              <h2>{{ find.name }}</h2>
+              <p>{{ find.createdTime }}</p>
             </ion-label>
         </ion-item>
       </ion-list>

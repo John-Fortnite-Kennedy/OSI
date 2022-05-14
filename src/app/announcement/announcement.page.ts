@@ -8,9 +8,9 @@ import { ModalController } from '@ionic/angular';
 })
 export class AnnouncementPage implements OnInit {
 
-  @Input() title: string;
+  @Input() name: string;
   @Input() description: string;
-  @Input() date: string;
+  @Input() createdTime: string;
 
   constructor(private modalController: ModalController) { }
 

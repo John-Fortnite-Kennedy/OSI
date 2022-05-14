@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { ApiCallerService } from '../api-caller.service';
 import { FindPage } from '../find/find.page';
 
 @Component({
@@ -9,25 +10,27 @@ import { FindPage } from '../find/find.page';
 })
 export class FindsPage implements OnInit {
 
-  finds = [
-    { 
-      title: "Шапка",
-      description: "Была найдена на перилах.",
-      date: "02 февраля 2022"
-    },
-    { 
-      title: "Рюкзак",
-      description: "Был найдена за магазинам.",
-      date: "01 января 2022"
-    },
-    { 
-      title: "Велосипед",
-      description: "Был оставлен на дороге перед парковочным местом.",
-      date: "05 декабрь 2021"
-    }
-  ]
+  houseId;
 
-  constructor(private modalController: ModalController) { }
+  finds = []
+
+  constructor(public api: ApiCallerService, private modalController: ModalController) { 
+    this.api.myjwt =  sessionStorage.getItem('token');
+    this.houseId =  sessionStorage.getItem('houseId');
+
+    var response = this.api.sendGetRequestWithAuth("/auth/house/"+this.houseId+"/find/get")
+          response.subscribe(data => {
+            console.log(data['payload']);
+            for(let i=0;i<data['payload'].length;i++){
+              this.finds.push(data['payload'][i]);
+            }
+            console.log(this.finds);
+            
+          }, error => {
+            // Add if login and password is incorrect.
+            this.api.errorHandler(error.status);
+          })
+  }
 
   ngOnInit() { }
 
@@ -36,9 +39,10 @@ export class FindsPage implements OnInit {
       component: FindPage,
       cssClass: 'my-custom-class',
       componentProps: {
-        'title': tmp.title,
+        'name': tmp.name,
         'description':  tmp.description,
-        'date':  tmp.date
+        'createdTime':  tmp.date,
+        'path': tmp.file.path
       },
       initialBreakpoint: 0.92,
     breakpoints: [0, 0.92, 1] 

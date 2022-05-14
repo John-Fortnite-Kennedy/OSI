@@ -35,9 +35,8 @@ export class FinishRegistrationPage implements OnInit {
     //console.log(data)
     var response = this.api.sendPostRequestWithAuth(data, "/auth/userdata/update")
     response.subscribe(data => {
-      //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
       console.log(data['payload']);
-      this.router.navigateByUrl('/tabs/home');
+      this.router.navigateByUrl('/tabs/osi');
     }, error => {
       // Add if login and password is incorrect.
       this.api.errorHandler(error.status);
