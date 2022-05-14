@@ -1,9 +1,44 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>add-request</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="requests"
+        text=""
+        icon="chevron-back-sharp">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Добавить заявку</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content class="ion-padding" fullscreen="true">
+  <div class="formHolder">
+    <ion-item lines="none" button="false">
+      <ion-label position="stacked">Категория</ion-label>
+      <ion-select id="city" placeholder="Выберите категорию" interface="popover" required>
+        <ion-select-option *ngFor="let category of categories">
+          {{ category.title }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label position="stacked">Описание</ion-label>
+      <ion-input id="address" placeholder="Введите описание" required></ion-input>
+    </ion-item>
+  
+    <!-- <ion-item id="add-doc" lines="none">
+      <ion-label id="add-doc-label" slot="start">Документы</ion-label>
+      <ion-button id="add-doc-button" slot="end">Добавить</ion-button>
+    </ion-item> -->
+  
+    <!-- <div class="docs">
+        <ion-thumbnail>
+          <img src="../../assets/imgs/icon-pdf.png">
+        </ion-thumbnail>
+    </div> -->
+  
+    <ion-button id="joinBtn" expand="block">
+      <ion-label>Создать</ion-label>
+    </ion-button>
+  </div>
 </ion-content>

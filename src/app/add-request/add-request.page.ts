@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddRequestPage implements OnInit {
 
+  categories = [
+    {
+      title: "Клининг"
+    },
+    {
+      title: "Сан узел"
+    },
+    {
+      title: "Охрана"
+    }
+  ]
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

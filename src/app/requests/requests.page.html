@@ -16,8 +16,8 @@
     <h5>Добавить заявку</h5>
   </div>
   <div class="buttonHolder">
-    <ion-button id="join">Для cебя</ion-button>
-    <ion-button id="create">Для ОСИ</ion-button>
+    <ion-button id="join" [routerLink]="['/add-request']">Для cебя</ion-button>
+    <ion-button id="create" [routerLink]="['/add-request']">Для ОСИ</ion-button>
   </div>
 
   <div id="noList" *ngIf="true; else filledList"> 
