@@ -130,6 +130,14 @@ const routes: Routes = [
     path: 'add-find',
     loadChildren: () => import('./add-find/add-find.module').then( m => m.AddFindPageModule)
   },
+  {
+    path: 'requests',
+    loadChildren: () => import('./requests/requests.module').then( m => m.RequestsPageModule)
+  },
+  {
+    path: 'add-request',
+    loadChildren: () => import('./add-request/add-request.module').then( m => m.AddRequestPageModule)
+  },
 
 ];
 

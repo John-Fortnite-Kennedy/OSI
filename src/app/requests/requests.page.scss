@@ -67,8 +67,38 @@ ion-list {
     }
 }
 
-#addBtn {
-    --background: linear-gradient(135deg, #ba3bbe, #6f34cc);
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
+.text{
+    h5{
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
 }
+
+.buttonHolder{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    ion-button{
+        width: 45%;
+        font-size: 0.85rem;
+        text-transform: none;
+        --border-radius: 0.5rem;
+    }
+
+    #join {
+        --background: linear-gradient(135deg, #ba3bbe, #6f34cc);
+    }
+
+    #create{
+        --background: linear-gradient(135deg, #348CBE, #34CBC2);
+    }
+}
+
+// #addBtn {
+//     --background: linear-gradient(135deg, #ba3bbe, #6f34cc);
+//     margin-right: 0.5rem;
+//     margin-bottom: 0.5rem;
+// }

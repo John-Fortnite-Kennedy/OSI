@@ -7,22 +7,30 @@
         icon="chevron-back-sharp">
       </ion-back-button>
     </ion-buttons>
-    <ion-title>Голосования</ion-title>
+    <ion-title>Заявки</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
+  <div class="text">
+    <h5>Добавить заявку</h5>
+  </div>
+  <div class="buttonHolder">
+    <ion-button id="join">Для cебя</ion-button>
+    <ion-button id="create">Для ОСИ</ion-button>
+  </div>
+
   <div id="noList" *ngIf="true; else filledList"> 
-    <p>Нет голосований</p>
+    <p>Нет заявок</p>
   </div>
 
   <ng-template #filledList>     
 
   </ng-template>
 
-  <ion-fab *ngIf="false" vertical="bottom" horizontal="end" slot="fixed">
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button id="addBtn" [routerLink]="['/add-report']">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> -->
 </ion-content>
