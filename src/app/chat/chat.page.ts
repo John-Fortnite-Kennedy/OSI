@@ -16,6 +16,12 @@ export class ChatPage implements OnInit {
 
   allmessages = [];
 
+  chats = [];
+
+  current_message: string;
+
+  ws;
+
   
 
   constructor(public api: ApiCallerService) { 
@@ -26,14 +32,52 @@ export class ChatPage implements OnInit {
     //this.tmp = this.userinfo.substring(this.userinfo.indexOf('"houseId":'), this.userinfo.length);
     //console.log(tmp.substring(10, tmp.indexOf(',"name"')));
     //this.tmp = this.tmp.substring(10, this.tmp.indexOf(',"name"'));
+
+    var response = this.api.sendGetRequestWithAuth("/auth/userdata/chats")
+          response.subscribe(data => {
+            //console.log(data['payload']);
+
+            for(let i=0;i<data['payload'].length;i++){
+              this.chats.push(data['payload']);
+            }
+            console.log(this.chats[0][0].id);
+          }, error => {
+            // Add if login and password is incorrect.
+            this.api.errorHandler(error.status);
+          })
+
     sessionStorage.setItem('houseId', this.userinfo.houses[0].houseId);
+    //console.log(this.userinfo.houses[0]);
     this.connectToWebsocket();
   }
 
-  connectToWebsocket(){
-    var ws = webSocket('ws://185.22.64.115:4001/api/ws/messages?key='+this.api.myjwt+'&houseId='+this.userinfo.houses[0].houseId);
+  send(){
+    if(this.current_message.trim() !="" && this.current_message!=null){
+      // var data = {
+      //   "chatId":this.chats[0][0].id,
+      //   "text":this.current_message,
+      //   "type": "text"
+      // }
+      // var response = this.api.sendPostRequestWithAuth(data,"/auth/chat/sendMessage")
+      // response.subscribe(data => {
+      //   console.log(data['payload']);
 
-    ws.subscribe(
+      //   //this.allmessages.unshift(obj.insert_message);
+      // }, error => {
+      //     // Add if login and password is incorrect.
+      //     this.api.errorHandler(error.status);
+      // })
+
+      this.ws.next({ text: this.current_message, type: "text" }); 
+
+      this.current_message = "";
+    }
+  }
+
+  connectToWebsocket(){
+    this.ws = webSocket('ws://185.22.64.115:4001/api/ws/messages?key='+this.api.myjwt+'&houseId='+this.userinfo.houses[0].houseId);
+
+    this.ws.subscribe(
       msg => {
         var obj = JSON.parse(JSON.stringify(msg))
         //console.log(obj)
@@ -55,6 +99,10 @@ export class ChatPage implements OnInit {
         setInterval(this.connectToWebsocket, 5000)
       } // Called when connection is closed (for whatever reason).
     );
+  }
+
+  refresh(): void {
+    window.location.reload();
   }
 
   ngOnInit() { }

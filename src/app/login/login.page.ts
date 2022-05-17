@@ -38,13 +38,12 @@ export class LoginPage implements OnInit {
     var data = {
       "phone": tmp,
     }
-    //console.log(data)
+    console.log(data)
     var response = this.api.sendPostRequest(data, "/common/login")
     response.subscribe(data => {
-      //sessionStorage.setItem('manager_access_data', JSON.stringify(data['payload']))
       console.log(data['payload']);
-      sessionStorage.setItem('code',data['payload']);
-      sessionStorage.setItem('phone',tmp);
+      sessionStorage.setItem('code', data['payload']);
+      sessionStorage.setItem('phone', tmp);
       this.router.navigateByUrl('/code-confirmation');
     }, error => {
       // Add if login and password is incorrect.

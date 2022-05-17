@@ -41,8 +41,20 @@ export class CodeConfirmationPage implements OnInit {
       response.subscribe(data => {
         console.log(data['payload']);
         sessionStorage.setItem('token', data['payload']);
+        this.finish();
+      }, error => {
+        this.api.errorHandler(error.status);
+      })
 
-          var response = this.api.sendGetRequestWithAuth("/auth/userdata")
+      
+
+    } else {
+      alert("not true");
+    }
+  }
+
+  finish(){
+    var response = this.api.sendGetRequestWithAuth("/auth/userdata")
           response.subscribe(data => {
             console.log("this");
             console.log(data['payload']);
@@ -63,13 +75,6 @@ export class CodeConfirmationPage implements OnInit {
           }, error => {
             this.api.errorHandler(error.status);
           })
-      }, error => {
-        this.api.errorHandler(error.status);
-      })
-
-    } else {
-      alert("not true");
-    }
   }
 
   again(){

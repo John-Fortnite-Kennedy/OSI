@@ -30,8 +30,8 @@
 
 <ion-footer class="ion-no-border">
   <div class="sendPanel">
-    <ion-input type="text" placeholder="Введите сообщение ..."></ion-input>
-    <ion-button slot="end">
+    <ion-input [(ngModel)]="current_message" type="text" placeholder="Введите сообщение ..." (keydown.enter)='send()'></ion-input>
+    <ion-button slot="end" (click)="send()">
       <ion-icon name="send" size="large"></ion-icon>
     </ion-button>
   </div>
