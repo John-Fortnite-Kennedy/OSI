@@ -31,51 +31,48 @@ export class CodeConfirmationPage implements OnInit {
 
   submit(){
     console.log(this.code.toString().replace(/\,/g, ''));
-    if(this.code.toString().replace(/\,/g, '') == this.verify){
+    // if(this.code.toString().replace(/\,/g, '') == this.verify){
+    //   var data = {
+    //     "phone": this.phone,
+    //     "lastCode": this.verify
+    //   }
+    //   var response = this.api.sendPostRequest(data, "/common/verify")
+    //   response.subscribe(data => {
+    //     console.log(data['payload']);
+    //     sessionStorage.setItem('token', data['payload']);
+    //     var response = this.api.sendGetRequestWithAuth("/auth/userdata")
+    //       response.subscribe(data => {
+    //         console.log("this");
+    //         console.log(data['payload']);
+    //         this.userdata = data['payload'];
+            
+    //         sessionStorage.setItem('user', JSON.stringify(this.userdata));
 
-      var data = {
-        "phone": this.phone,
-        "lastCode": this.verify
-      }
-      var response = this.api.sendPostRequest(data, "/common/verify")
-      response.subscribe(data => {
-        console.log(data['payload']);
-        sessionStorage.setItem('token', data['payload']);
-        this.finish();
-      }, error => {
-        this.api.errorHandler(error.status);
-      })
+    //         if (this.userdata.user.name == "" || this.userdata.user.name == null || this.userdata.user.surname == "" || this.userdata.user.surname == null){
+    //           this.router.navigateByUrl('/finish-registration');
+    //           console.log("нет имени");
+    //         } else if (this.userdata.houses == null){
+    //           this.router.navigateByUrl('/tabs/osi');
+    //           console.log("нет домов");
+    //         } else {
+    //           this.router.navigateByUrl('/tabs/home');
+    //         }
+    
+    //       }, error => {
+    //         this.api.errorHandler(error.status);
+    //       })
+    //   }, error => {
+    //     this.api.errorHandler(error.status);
+    //   })
 
       
 
-    } else {
-      alert("not true");
-    }
+    // } else {
+    //   alert("not true");
+    // }
+    this.router.navigateByUrl('');
   }
 
-  finish(){
-    var response = this.api.sendGetRequestWithAuth("/auth/userdata")
-          response.subscribe(data => {
-            console.log("this");
-            console.log(data['payload']);
-            this.userdata = data['payload'];
-            
-            sessionStorage.setItem('user', JSON.stringify(this.userdata));
-
-            if (this.userdata.user.name == "" || this.userdata.user.name == null || this.userdata.user.surname == "" || this.userdata.user.surname == null){
-              this.router.navigateByUrl('/finish-registration');
-              console.log("нет имени");
-            } else if (this.userdata.houses == null){
-              this.router.navigateByUrl('/tabs/osi');
-              console.log("нет домов");
-            } else {
-              this.router.navigateByUrl('/tabs/home');
-            }
-    
-          }, error => {
-            this.api.errorHandler(error.status);
-          })
-  }
 
   again(){
     console.log("again");

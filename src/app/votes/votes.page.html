@@ -12,17 +12,20 @@
 </ion-header>
 
 <ion-content class="ion-padding" fullscreen="true">
-  <div id="noList" *ngIf="true; else filledList"> 
+  <div id="noList" *ngIf="votes.length == 0; else filledList"> 
     <p>Нет голосований</p>
   </div>
 
   <ng-template #filledList>     
-
+    <ion-list>
+      <ion-item lines="none" *ngFor="let vote of votes" (click)="presentModal(vote)">
+          <ion-label class="ion-no-padding ion-no-margin">
+            <h2>{{ vote.name }}</h2>
+            <p>{{ vote.createdTime }}</p>
+          </ion-label>
+      </ion-item>
+    </ion-list>
   </ng-template>
 
-  <ion-fab *ngIf="false" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button id="addBtn" [routerLink]="['/add-report']">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
 </ion-content>

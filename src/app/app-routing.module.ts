@@ -142,7 +142,11 @@ const routes: Routes = [
   {
     path: 'wait',
     loadChildren: () => import('./wait/wait.module').then( m => m.WaitPageModule)
+  },  {
+    path: 'vote',
+    loadChildren: () => import('./vote/vote.module').then( m => m.VotePageModule)
   },
+
 
 ];
 

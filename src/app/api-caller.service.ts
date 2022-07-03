@@ -14,7 +14,7 @@ export class ApiCallerService {
 
   }
 
-  const_url = "http://185.22.64.115:4001/api" //"https://saktan.kz/api"
+  const_url = "https://barystech.kz/api" //"https://saktan.kz/api"
 
   ngOnInit(){}
 
